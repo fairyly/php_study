@@ -1,0 +1,1167 @@
+
+
+echo "打印信息";
+print_r($re);
+var_dump($var);
+
+error_reporting(0); //禁止显示PHP警告提示
+
+unset($var3);”，将变量“$var3”注销定义。
+
+
+
+定义变量：
+
+$te = 23;
+
+
+定义常量：
+
+$p = "PII";
+
+define("PI",3.14);
+
+define($p,3.14);
+
+
+计算表达式：
+<?php echo 12*3;?>
+
+在php中字符串连接符是用点（.）来表示的，这一点比较特殊，其它语言中是用加号（+）来表示的；
+<?php echo 'Hi,'.'imooc!';?>
+
+
+
+我们可以通过使用“memory_get_usage”获取当前PHP消耗的内存。
+echo $m1 = memory_get_usage(); 
+
+echo "<br />";
+
+$var_string = "123";
+
+echo $m2 = memory_get_usage()-$m1; 
+
+echo "<br />";
+$n=123; 
+
+echo $m3 = memory_get_usage()-$m1-$m2; 
+
+echo "<br />";
+
+$f=123.00;
+
+echo $m4 = memory_get_usage()-$m1-$m2-$m3; 
+
+echo "<br />";
+
+$var_array = array("123");
+
+echo $m5 = memory_get_usage()-$m1-$m2-$m3-$m4; 
+
+
+$data_int = 1234;   // 十进制数 
+$data_int = -567;    // 一个负数
+$data_int = 0123;    // 八进制数（等于十进制的 83）
+$data_int = 0x1a;    // 十六进制数（等于十进制的 26）
+
+$num_float = 1.234;    //小数点  
+$num_float = 1.2e3;    //科学计数法，小写e  
+$num_float = 7.0E-10;     //科学计数法，大写E 
+
+
+当你的字符串中包含引号的时候；
+第一种方案：在单引号中嵌入双引号，$str_string1 = '甲问："你在哪里学的PHP？"';
+
+第二种方案：在双引号中嵌入单引号，$str_string2 = "乙毫不犹豫地回答：'当然是慕课网咯！'";
+
+第三种方案：使用转义符“\”(后面部分还有介绍)，$str_string3 = '甲问:\'能告诉我网址吗？\'';
+
+引号遇到美元符号；
+当双引号中包含变量时，变量会与双引号中的内容连接在一起；
+
+当单引号中包含变量时，变量会被当做字符串输出
+1、输入“$string1 = "慕课网,$love";”；
+2、输入“$string2 = '慕课网,$love';”
+
+使用Heredoc结构形式的方法来解决该问题，首先使用定界符表示字符串（<<<），
+接着在“<<<“之后提供一个标识符GOD，然后是字符串，最后以提供的这个标识符结束字符串 或者DOG
+$string1 = <<<GOD
+
+我有一只小毛驴，我从来也不骑。
+
+有一天我心血来潮，骑着去赶集。
+
+我手里拿着小皮鞭，我心里正得意。
+
+不知怎么哗啦啦啦啦，我摔了一身泥
+
+GOD;
+
+
+echo $string1;
+
+
+
+系统变量：
+//php程序文件名。它可以帮助我们获取当前文件在服务器的物理位置。
+echo __FILE__;
+
+  echo "<br />";
+// 换行
+
+//PHP程序文件行数。它可以告诉我们，当前代码在第几行。
+echo __LINE__;
+
+echo "<br />";
+
+
+//当前解析器的版本号。它可以告诉我们当前PHP解析器的版本号，我们可以提前知道我们的PHP代码是否可被该PHP解析器解析。
+echo PHP_VERSION;
+
+echo "<br />";
+
+
+echo PHP_VERSION;
+或者
+echo phpversion();
+
+//执行当前PHP版本的操作系统名称。它可以告诉我们服务器所用的操作系统名称，我们可以根据该操作系统优化我们的代码。
+echo PHP_OS;
+
+echo "<br />";
+
+var_dump("打印类型和值")
+
+
+
+
+
+
+
+
+
+PHP的赋值运算符有两种，分别是：
+
+(1)“=”：把右边表达式的值赋给左边的运算数。它将右边表达式值复制一份，交给左边的运算数。换而言之，首先给左边的运算数申请了一块内存，然后把复制的值放到这个内存中。
+
+(2)“&”：引用赋值，意味着两个变量都指向同一个数据。它将使两个变量共享一块内存，如果这个内存存储的数据变了，那么两个变量的值都会发生变化。
+
+
+
+PHP中的字符串连接运算符
+字符串连接运算符是为了将两个字符串进行连接，PHP中提供的字符串连接运算符有：
+
+（1）连接运算符(“.”)：它返回将右参数附加到左参数后面所得的字符串。
+
+（2）连接赋值运算符(“.=”)：它将右边参数附加到左边的参数后。
+
+
+echo date_default_timezone_get();//获取时区
+
+date_default_timezone_set('Asia/ShangHai');
+   //设置时区 
+$today = date('m-d',time());//获取当天日期
+
+	echo date('y-m-d h:i:s',time()); 获取时间
+
+$num = rand(1,50);//获取1至50的随机数
+
+
+
+
+索引数组赋值有三种方式:
+
+第一种：用数组变量的名字后面跟一个中括号的方式赋值，
+当然，索引数组中，中括号内的键一定是整数。比如，$arr[0]='苹果';
+
+ 
+
+第二种：用array()创建一个空数组，
+使用=>符号来分隔键和值，左侧表示键，右侧表示值。
+当然，索引数组中，键一定是整数。比如，array('0'=>'苹果');
+
+ 
+
+第三种：用array()创建一个空数组，直接在数组里用英文的单引号'或者英文的双引号"赋值，
+数组会默认建立从0开始的整数的键。
+比如array('苹果');这个数组相当于array('0'=>'苹果');
+
+可以使用print_r($fruit);语句输出数组键及对应的值。
+
+$students = array(
+'2015'=>'任我行',
+'2016'=>'冲虚',
+'2017'=>'方正',
+'2018'=>'岳不群',
+'2019'=>'宁中则',
+);//学生的学号和姓名，用数组存储
+
+
+//使用循环结构遍历数组,获取学号和姓名  
+
+foreach($students as $key =>$v)
+{ 
+   
+	 echo $key.":".$v;//输出（打印）学号：姓名
+	
+	echo "<br />";
+
+}
+
+foreach($students as  $v)
+{ 
+    
+	echo $v;//输出（打印）姓名
+	
+	echo "<br />";
+
+}
+
+PHP函数之内置函数：
+
+1、通过内置函数str_replace可以实现字符串的替换：
+	将“jobs”替换成“steven jobs”；
+$str = 'i am jobs.';
+$str = str_replace('jobs', 'steven jobs', $str);
+echo $str; //结果为“i am steven jobs”
+
+
+
+2、常会先使用function_exists判断一下函数是否存在
+
+3、PHP函数之可变函数
+	function func() {
+    
+		echo 'my function called.';
+	
+}
+	
+$name = 'func';
+
+	//调用可变函数
+
+	$name();
+
+
+
+//定义一个Car类并实例化一个对象
+
+class Car{
+    
+var $name = "test";
+    
+	function getName(){
+        
+		return $this->name;
+    
+	}
+
+}
+
+$car = new Car();
+
+// $car->name = "hhhh";
+
+echo $car->getName();
+
+time();时间戳
+
+
+
+访问控制的关键字代表的意义为：
+
+public：公开的
+protected：受保护的
+private：私有的
+
+默认都为public，外部可以访问。一般通过->对象操作符来访问对象的属性或者方法，
+对于静态属性则使用::双冒号进行访问。
+当在类成员方法内部调用的时候，可以使用$this伪变量调用当前对象的属性。
+
+
+
+
+4、PHP类和对象之构造函数和析构函数
+
+PHP5可以在类中使用__construct()定义一个构造函数，具有构造函数的类，
+会在每次对象创建的时候调用该函数，
+因此常用来在对象创建的时候进行一些初始化工作
+
+同样，PHP5支持析构函数，使用__destruct()进行定义，
+析构函数指的是当某个对象的所有引用被删除，
+或者对象被显式的销毁时会执行的函数。
+
+class Car {
+    
+	//增加构造函数与析构函数
+    
+	function __construct(){
+        
+		print "jjjj\n";
+    
+	}
+    
+	function __destruct(){
+        
+		print "jj\n";
+   
+ 	}
+
+}
+
+$car = new Car();
+//这里输出jjjj;
+unset($car);//这里输出jj
+
+在子类中如果定义了__construct则不会调用父类的__construct，
+如果需要同时调用父类的构造函数，需要使用parent::__construct()显式的调用。
+
+class Car {
+   function __construct() {
+       print "父类构造函数被调用\n";
+   }
+}
+class Truck extends Car {
+   function __construct() {
+       print "子类构造函数被调用\n";
+       parent::__construct();
+   }
+}
+$car = new Truck();
+
+
+
+
+5、PHP类和对象之Static静态关键字
+
+静态属性与方法可以在不实例化类的情况下调用，直接使用   类名::方法名  的方式进行调用。
+静态属性不允许对象使用 -> 操作符调用
+
+class Car {
+    
+	private static $speed = 10;
+    
+    
+	public function getSpeed() {
+        
+		return self::$speed;
+   
+	 }
+    
+    
+	//在这里定义一个静态方法，实现速度累加10
+    
+	public static function speedUp(){
+        
+		return self::$speed+=10;
+   
+	 }
+
+
+
+
+
+}
+
+
+	$car = new Car();
+	
+Car::speedUp();  //调用静态方法加速
+	
+echo $car->getSpeed();  //调用共有方法输出当前的速度值
+
+
+静态方法也可以通过变量来进行动态调用
+
+$func = 'getSpeed';
+$className = 'Car';
+echo $className::$func();  //动态调用静态方法
+
+
+静态方法中，$this伪变量不允许使用。可以使用self，parent，static在内部调用静态方法与属性。
+
+
+
+6、PHP类和对象之访问控制
+如果构造函数定义成了私有方法，则不允许直接实例化对象了，
+这时候一般通过静态方法进行实例化，在设计模式中会经常使用这样的方法来控制对象的创建，
+比如单例模式只允许有一个全局唯一的对象。
+
+class Car {
+    private function __construct() {
+        echo 'object create';
+    }
+
+    private static $_object = null;
+    public static function getInstance() {
+        if (empty(self::$_object)) {
+            self::$_object = new Car(); //内部方法可以调用私有方法，因此这里可以创建对象
+        }
+        return self::$_object;
+    }
+}
+//$car = new Car(); //这里不允许直接实例化对象
+$car = Car::getInstance(); //通过静态方法来获得一个实例
+
+7、PHP类和对象之对象继承
+
+
+class Car {
+    
+	public $speed = 0; //汽车的起始速度是0
+    
+    
+	public function speedUp() {
+        
+		$this->speed += 10;
+        
+		return $this->speed;
+    
+	}
+
+}
+
+//定义继承于Car的Truck类
+
+class Truck extends Car{
+     
+	public function speedUp() {
+       
+ 		return $this->speed = parent::speedUp() + 50;
+    
+ 	}
+
+}
+
+
+
+
+
+8、PHP类和对象之重载：
+
+PHP中的重载指的是动态的创建属性与方法，是通过魔术方法来实现的。
+属性的重载通过__set，__get，__isset，__unset来分别实现对不存在属性的赋值、读取、判断属性是否设置、销毁属性。
+
+
+
+方法的重载通过__call来实现，当调用不存在的方法的时候，将会转为参数调用__call方法，当调用不存在的静态方法时会使用__callStatic重载。
+
+class Car {
+    public $speed = 0;
+    
+    public function __call($name, $args) {
+        if ($name == 'speedUp') {
+            $this->speed += 10;
+        }
+    }
+}
+$car = new Car();
+$car->speedUp(); //调用不存在的方法会使用重
+echo $car->speed;
+
+
+9、PHP类和对象之对象的高级特性
+对象比较：
+当同一个类的两个实例的所有属性都相等时，可以使用比较运算符==进行判断，
+当需要判断两个变量是否为同一个对象的引用时，可以使用全等运算符===进行判断。
+class Car {
+}
+$a = new Car();
+$b = new Car();
+if ($a == $b) echo '==';   //true
+if ($a === $b) echo '==='; //false
+
+对象复制：
+在一些特殊情况下，可以通过关键字clone来复制一个对象，这时__clone方法会被调用，通过这个魔术方法来设置属性的值。
+
+class Car {
+    public $name = 'car';
+    
+    public function __clone() {
+        $obj = new Car();
+        $obj->name = $this->name;
+    }
+}
+$a = new Car();
+$a->name = 'new car';
+$b = clone $a;
+var_dump($b);
+
+
+对象序列化：
+可以通过serialize方法将对象序列化为字符串，用于存储或者传递数据，
+然后在需要的时候通过unserialize将字符串反序列化成对象进行使用。
+
+class Car {
+    public $name = 'car';
+}
+$a = new Car();
+$str = serialize($a); //对象序列化成字符串
+echo $str.'<br>';
+$b = unserialize($str); //反序列化为对象
+var_dump($b);
+
+
+字符串：
+
+
+1、去空格：trim($str)//去除一个字符串两端空格。
+	rtrim是去除一个字符串右部空格，其中的r是right的缩写。
+	ltrim是去除一个字符串左部空格，其中的l是left的缩写。
+
+
+2、 字符串之获取字符串的长度：strlen($str);//strlen函数对于计算英文字符是非常的擅长，但是如果有中文汉字
+	可以使用mb_strlen()函数获取字符串中中文长度;
+	$str = "我爱你";
+	echo mb_strlen($str,"UTF8");//结果：3，此处的UTF8表示中文编码是UTF8格式，中文一般采用UTF8编码
+
+3、PHP字符串之字符串的截取
+	1、英文字符串的截取函数substr()；函数说明：substr(字符串变量,开始截取的位置，截取个数）
+	2、中文字符串的截取函数mb_substr()；函数说明：mb_substr(字符串变量,开始截取的位置，截取个数, 网页编码）
+
+4、PHP字符串之查找字符串
+	查找字符串，我们需要用到PHP的查找字符串函数strpos();
+
+	函数说明：strpos(要处理的字符串, 要定位的字符串, 定位的起始位置[可选])
+
+
+5、PHP字符串之替换字符串：替换字符串，我们需要用到PHP的替换函数str_replace()
+
+	函数说明：str_replace(要查找的字符串, 要替换的字符串, 被搜索的字符串, 替换进行计数[可选])
+
+6、PHP字符串之格式化字符串：PHP的格式化字符串函数sprintf()
+
+	函数说明：sprintf(格式, 要转化的字符串)
+
+	返回：格式化好的字符串
+	这个 %01.2f 是什么意思呢？
+
+	1、这个 % 符号是开始的意思，写在最前面表示指定格式开始了。 也就是 "起始字符", 直到出现 "转换字符" 为止，就算格式终止。
+	2、跟在 % 符号后面的是 0， 是 "填空字元" ，表示如果位置空着就用0来填满。
+	3、在 0 后面的是1，这个 1 是规定整个所有的字符串占位要有1位以上(小数点也算一个占位)。
+	如果把 1 改成 6，则 $result的值将为 099.90
+	因为，在小数点后面必须是两位，99.90一共5个占位，现在需要6个占位，所以用0来填满。
+	4、在 %01 后面的 .2 （点2） 就很好理解了，它的意思是，小数点后的数字必须占2位。 
+	如果这时候，$str 的值为9.234,则 $result的值将为9.23.
+	为什么4 不见了呢？ 因为在小数点后面，按照上面的规定，必须且仅能占2位。 
+	可是 $str 的值中，小数点后面占了3位，所以，尾数4被去掉了，只剩下 23。
+	5、最后，以 f "转换字符" 结尾。
+
+
+7、PHP字符串之字符串的合并与分割
+	1、php字符串合并函数implode()
+
+	函数说明：implode(分隔符[可选], 数组)
+
+	返回值：把数组元素组合为一个字符串
+
+	2、php字符串分隔函数explode()
+
+	函数说明：explode(分隔符[可选], 字符串)
+
+	返回值：函数返回由字符串组成的数组
+
+8、PHP字符串之字符串的转义
+	php字符串转义函数addslashes()
+
+	函数说明：用于对特殊字符加上转义字符，返回一个字符串
+
+	返回值：一个经过转义后的字符串
+
+	例子：
+
+	$str = "what's your name?";
+	echo addslashes($str);//输出：what\'s your name?
+	
+
+
+正则表达式：
+	preg_match() 函数用于进行正则表达式匹配，成功返回 1 ，否则返回 0 。
+	语法：
+	int preg_match( string pattern, string subject [, array matches ] )
+
+	preg_match只能匹配一次结果，但很多时候我们需要匹配所有的结果，
+	preg_match_all可以循环获取一个列表的匹配结果数组。
+
+	$p = '/apple/';
+	$str = "apple banna";
+	if (preg_match($p, $str)) {
+    		echo 'matched';
+	}
+	其中字符串'/apple/'就是一个正则表达式，他用来匹配源字符串中是否存在apple字符串。
+
+	PHP中使用PCRE库函数进行正则匹配，比如上例中的preg_match用于执行一个正则匹配，常用来判断一类字符模式是否存在。
+
+
+	基本语法：
+	PCRE库函数中，正则匹配模式使用分隔符与元字符组成，分隔符可以是非数字、非反斜线、非空格的任意字符。
+	经常使用的分隔符是正斜线(/)、hash符号(#) 以及取反符号(~)，例如：
+
+	/foo bar/
+	#^[^0-9]$#
+	~php~
+	如果模式中包含分隔符，则分隔符需要使用反斜杠（\）进行转义。
+
+	/http:\/\//
+	如果模式中包含较多的分割字符，建议更换其他的字符作为分隔符，也可以采用preg_quote进行转义。
+
+	$p = 'http://';
+	$p = '/'.preg_quote($p, '/').'/';
+	echo $p;
+	分隔符后面可以使用模式修饰符，模式修饰符包括：i, m, s, x等，例如使用i修饰符可以忽略大小写匹配：
+
+	$str = "Http://www.imooc.com/";
+	if (preg_match('/http/i', $str)) {
+    		echo '匹配成功';
+	}
+
+
+
+
+	正则表达式中具有特殊含义的字符称之为元字符，常用的元字符有：
+
+	\ 一般用于转义字符
+	^ 断言目标的开始位置(或在多行模式下是行首)
+	$ 断言目标的结束位置(或在多行模式下是行尾)
+	. 匹配除换行符外的任何字符(默认)
+	[ 开始字符类定义
+	] 结束字符类定义
+	| 开始一个可选分支
+	( 子组的开始标记
+	) 子组的结束标记
+	? 作为量词，表示 0 次或 1 次匹配。位于量词后面用于改变量词的贪婪特性。 
+	* 量词，0 次或多次匹配
+	+ 量词，1 次或多次匹配
+	{ 自定义量词开始标记
+	} 自定义量词结束标记
+
+
+	\s匹配任意的空白符，包括空格，制表符，换行符。
+	[^\s]代表非空白符。[^\s]+表示一次或多次匹配非空白符。
+	\w匹配字母或数字或下划线，
+
+
+
+ 	$p = "/<li>(.*)<\/li>/i";
+	//解释下这个正则：
+	//后面的i表示不区分大小写，
+	<li>(.*?)<\/li>表示li标签内的匹配的()内的值有多少，
+	括号内的.表示所有单字符,
+	*表示数量为0个或者多个。
+	也就是li标签内有字符就显示出来
+	preg_match_all($p, $str, $matches);
+	print_r($matches[1]);
+
+正则表达式的搜索和替换：
+	preg_replace($pattern, $replacement, $string);
+
+	调整字符串的日期格式：
+	$string = 'April 15, 2014';
+	$pattern = '/(\w+) (\d+), (\d+)/i';
+	$replacement = '$3, ${1} $2';
+	echo preg_replace($pattern, $replacement, $string); //结果为：2014, April 15
+	其中${1}与$1的写法是等效的，表示第一个匹配的字串，$2代表第二个匹配的。
+
+
+
+	
+	用正则替换来去掉多余的空格与字符：
+	$str = 'one     two';
+	$str = preg_replace('/\s+/', ' ', $str);
+	echo $str; // 结果改变为'one two'
+
+
+	$str = '主要有以下几个文件：index.php, style.css, common.js';
+	$p = '/\w+\.\w+/i';
+	$str = preg_replace($p, '<em>$1</em>', $str);
+	echo $str;
+
+
+正则匹配常用在表单验证：
+
+	<?php
+		
+$user = array(
+    
+			'name' => 'spark1985',
+
+			'email' => 'spark@imooc.com',
+    
+			'mobile' => '13312345678'
+		
+);
+
+		//进行一般性验证
+		
+if (empty($user)) {
+    
+			die('用户信息不能为空');
+		
+}
+
+		if (strlen($user['name']) < 6) {
+    
+			die('用户名长度最少为6位');
+		
+}
+
+		//用户名必须为字母、数字与下划线
+
+		if (!preg_match('/^\w+$/i', $user['name'])) {
+   
+			 die('用户名不合法');
+		}
+
+		//验证邮箱格式是否正确
+		
+if (!preg_match('/^[\w\.]+@\w+\.\w+$/i', $user['email'])) {
+    
+			die('邮箱不合法');
+		
+}
+		
+//手机号必须为11位数字，且为1开头
+
+		if (!preg_match('/^1\d{10}$/i', $user['mobile'])) {
+    
+			die('手机号不合法');
+
+		}
+
+		echo '用户信息验证成功';
+
+cookie:
+
+        PHP通过setcookie函数进行Cookie的设置，
+	任何从浏览器发回的Cookie，PHP都会自动的将他存储在$_COOKIE的全局变量之中，
+	因此我们可以通过$_COOKIE['key']的形式来读取某个Cookie值。
+
+
+	<?php
+
+		setcookie('test', time());
+
+		ob_start();//打开输出缓冲
+		
+print_r($_COOKIE); 
+		
+$content = ob_get_contents();
+//返回输出缓冲区的内容
+		echo $content;
+		
+$content = str_replace(" ", '&nbsp;', $content);
+
+		ob_clean();
+		header("content-type:text/html; charset=utf-8");
+
+		echo '当前的Cookie为：<br>';
+
+		echo nl2br($content); //返回已转换的字符串。
+	可以直接使用header方法进行设置。
+
+	header("Set-Cookie:cookie_name=value");
+
+
+	setcookie具有7个可选参数，我们常用到的为前5个：
+
+	name（ Cookie名）可以通过$_COOKIE['name'] 进行访问
+	value（Cookie的值）
+	expire（过期时间）Unix时间戳格式，默认为0，表示浏览器关闭即失效
+	path（有效路径）如果路径设置为'/'，则整个网站都有效
+	domain（有效域）默认整个域名都有效，如果设置了'www.imooc.com',则只在www子域中有效
+
+	setcookie("TestCookie", $value, time()+3600);  //有效期一小时
+	setcookie("TestCookie", $value, time()+3600, "/path/", "imooc.com"); //设置路径与域
+
+
+	在PHP中删除cookie也是采用setcookie函数来实现。
+
+	setcookie('test', '', time()-1); 
+
+	也可以直接通过header来删除cookie。
+
+	header("Set-Cookie:test=1393832059; expires=".gmdate('D, d M Y H:i:s \G\M\T', time()-1));
+	这里用到了gmdate，用来生成格林威治标准时间，以便排除时差的影响。
+
+
+
+	cookie相对不是太安全，容易被盗用导致cookie欺骗
+	单个cookie的值最大只能存储4k
+	每次请求都要进行网络传输，占用带宽
+
+	session是将用户的会话数据存储在服务端，没有大小限制，
+	通过一个session_id进行用户识别，
+	PHP默认情况下session id是通过cookie来保存的，
+	因此从某种程度上来说，seesion依赖于cookie。
+	但这不是绝对的，session id也可以通过参数来实现，
+	只要能将session id传递到服务端进行识别的机制都可以使用session。	
+
+
+	//开始使用session
+	
+session_start();
+
+	//设置一个session
+
+	$_SESSION['test'] = time();
+
+	//显示当前的session_id
+	
+echo "session_id:".session_id();
+	
+echo "<br>";
+
+
+
+	//读取session值
+
+	echo $_SESSION['test'];
+
+
+	//销毁一个session
+	
+unset($_SESSION['test']);
+	
+echo "<br>";
+
+	var_dump($_SESSION);
+
+
+
+	删除某个session值可以使用PHP的unset函数;
+	如果要删除所有的session，可以使用session_destroy函数销毁当前session，
+	session_destroy会删除所有数据，但是session_id仍然存在。
+
+
+	使用session来存储用户的登录信息:	
+	session_start();
+
+	//假设用户登录成功获得了以下用户数据
+
+	$userinfo = array(
+    
+	'uid'  => 10000,
+   	
+	 'name' => 'spark',
+    
+	'email' => 'spark@imooc.com',
+    
+	'sex'  => 'man',
+   
+	 'age'  => '18'
+
+	);
+	
+header("content-type:text/html; charset=utf-8");
+
+
+	/* 将用户信息保存到session中 */
+	$_SESSION['uid'] = $userinfo['uid'];
+
+	$_SESSION['name'] = $userinfo['name'];
+
+	$_SESSION['userinfo'] = $userinfo;
+
+	
+
+//* 将用户数据保存到cookie中的一个简单方法 */
+
+	$secureKey = 'imooc'; //加密密钥
+
+	$str = serialize($userinfo); //将用户信息序列化
+
+
+	//用户信息加密前
+
+	$str = base64_encode(mcrypt_encrypt(MCRYPT_RIJNDAEL_256, md5($secureKey), $str, MCRYPT_MODE_ECB));
+
+	//用户信息加密后
+
+	//将加密后的用户数据存储到cookie中
+	
+setcookie('userinfo', $str);
+
+
+
+	//当需要使用时进行解密
+	
+$str = mcrypt_decrypt(MCRYPT_RIJNDAEL_256, md5($secureKey), base64_decode($str), MCRYPT_MODE_ECB);
+	
+$uinfo = unserialize($str);
+
+	echo "解密后的用户信息：<br>";
+
+	print_r($uinfo);
+
+
+文件系统：
+
+
+	最简单的读取文件的函数为file_get_contents，可以将整个文件全部读取到一个字符串中。
+
+	$content = file_get_contents('./test.txt');
+	file_get_contents也可以通过参数控制读取内容的开始点以及长度。
+
+	$content = file_get_contents('./test.txt', null, null, 100, 500);
+	PHP也提供类似于C语言操作文件的方法，使用fopen，fgets，fread等方法，
+	fgets可以从文件指针中读取一行，freads可以读取指定长度的字符串。
+
+
+	//首先采用“fopen”函数打开文件，得到返回值的就是资源类型。
+
+	$file_handle = fopen("/data/webroot/resource/php/f.txt","r");
+
+	echo $file_handle;
+
+	if ($file_handle){
+    
+	//接着采用while循环（后面语言结构语句中的循环结构会详细介绍）一行行地读取文件，然后输出每行的文字
+    
+		while (!feof($file_handle)) { //判断是否到最后一行
+        
+			$line = fgets($file_handle); //读取一行文本
+  $contents .= fread($fp, 4096); //一次读取4096个字符       
+			echo $line; //输出一行文本
+        
+			echo "<br />"; //换行
+    
+		}
+
+	}
+
+	fclose($file_handle);//关闭文件
+
+
+	一般情况下在对文件进行操作的时候需要先判断文件是否存在，
+	PHP中常用来判断文件存在的函数有两个is_file与file_exists.
+	更加精确的可以使用is_readable与is_writeable在文件是否存在的基础上，判断文件是否可读与可写。
+	
+	$filename = './test.txt';
+	if (is_writeable($filename)) {
+    		file_put_contents($filename, 'test');
+	}
+	if (is_readable($filename)) {
+    		echo file_get_contents($filename);
+	}
+
+
+	文件有很多元属性，包括：文件的所有者、创建时间、修改时间、最后的访问时间等。
+
+	fileowner：获得文件的所有者
+	filectime：获取文件的创建时间
+	filemtime：获取文件的修改时间
+	fileatime：获取文件的访问时间
+
+
+	其中最常用的是文件的修改时间，通过文件的修改时间，
+	可以判断文件的时效性，经常用在静态文件或者缓存数据的更新。
+
+	$mtime = filemtime($filename);
+	echo '修改时间：'.date('Y-m-d H:i:s', filemtime($filename));
+
+
+
+	PHP文件系统之取得文件的大小：通过filesize函数可以取得文件的大小，文件大小是以字节数表示的
+
+	
+	如果要转换文件大小的单位，可以自己定义函数来实现。
+
+function getsize($size, $format = 'kb') {
+    $p = 0;
+    if ($format == 'kb') {
+        $p = 1;
+    } elseif ($format == 'mb') {
+        $p = 2;
+    } elseif ($format == 'gb') {
+        $p = 3;
+    }
+    $size /= pow(1024, $p);
+    return number_format($size, 3);
+}
+
+$filename = '/data/webroot/usercode/code/resource/test.txt';
+$size = filesize($filename);
+
+$size = getsize($size, 'kb'); //进行单位转换
+echo $size.'kb';
+值得注意的是，没法通过简单的函数来取得目录的大小，目录的大小是该目录下所有子目录以及文件大小的总和，
+因此需要通过递归的方法来循环计算目录的大小。
+
+
+
+PHP日期和时间之取得当前的日期：
+
+	echo date("Y/m/d") . "<br>";//时间戳的格式。
+	echo date("Y.m.d") . "<br>";
+	echo date("Y-m-d");
+
+
+	//设置默认的时区
+
+	date_default_timezone_set('Asia/Shanghai');
+	
+//输出1396193923对应的日期
+	echo date("Y-m-d");
+
+
+	PHP提供了内置函数strtotime实现功能：获取某个日期的时间戳，或获取某个时间的时间戳
+	echo strtotime('2014-05-01');
+
+PHP日期和时间之将格式化的日期字符串转换为Unix时间戳:
+
+
+	strtotime函数预期接受一个包含美国英语日期格式的字符串并尝试将其解析为 Unix 时间戳。
+
+	函数说明：strtotime(要解析的时间字符串, 计算返回值的时间戳【默认是当前的时间，可选】)
+	返回值：成功则返回时间戳，否则返回 FALSE
+
+	比如
+
+	echo strtotime("now");//相当于将英文单词now直接等于现在的日期和时间，并把这个日期时间转化为unix时间戳。
+	这个效果跟echo time();一样。
+	echo strtotime("+1 seconds");//相当于将现在的日期和时间加上了1秒，并把这个日期时间转化为unix时间戳。
+	这个效果跟echo time()+1;一样。
+	echo strtotime("+1 day");//相当于将现在的日期和时间加上了1天。
+	echo strtotime("+1 week");//相当于将现在的日期和时间加上了1周。
+	echo strtotime("+1 week 3 days 7 hours 5 seconds");//相当于将现在的日期和时间加上了1周3天7小时5秒。
+ 
+
+PHP日期和时间之格式化格林威治（GMT）标准时间:
+
+	gmdate 函数能格式化一个GMT的日期和时间，返回的是格林威治标准时（GMT）;
+	
+	当前时间假定是2014-05-01 15:15:22
+	echo date('Y-m-d H:i:s', time()); //输出为：2014-05-01 15:15:22 
+	echo gmdate('Y-m-d H:i:s', time()); //输出为：2014-05-01 07:15:22 
+	因为格林威治时间是现在中国时区的时间减去8个小时，所以相对于现在时间要少8个小时
+
+
+
+
+PHP图形操作之GD库简介:
+
+
+	PHP默认已经集成了GD库，只需要在安装的时候开启就行。
+
+	header("content-type: image/png");
+	$img=imagecreatetruecolor(100, 100);
+	$red=imagecolorallocate($img, 0xFF, 0x00, 0x00);
+	imagefill($img, 0, 0, $red);
+	imagepng($img);
+	imagedestroy($img);
+
+
+
+
+
+ 	PHP图形操作之生成图像验证码:
+	imagestring函数就能实现。
+
+	但是在处理上，为了使验证码更加的安全，防止其他程序自动识别，
+	因此常常需要对验证码进行一些干扰处理，通常会采用绘制一些噪点，干扰线段，对输出的字符进行倾斜、扭曲等操作。
+
+	可以使用imagesetpixel绘制点来实现噪点干扰，但是只绘制一个点的作用不大，因此这里常常会使用循环进行随机绘制。
+
+
+	$img = imagecreatetruecolor(100, 40);
+
+	$black = imagecolorallocate($img, 0x00, 0x00, 0x00);
+	
+$green = imagecolorallocate($img, 0x00, 0xFF, 0x00);
+	
+$white = imagecolorallocate($img, 0xFF, 0xFF, 0xFF);
+	
+imagefill($img,0,0,$white);
+
+	//生成随机的验证码
+
+	$code = '';
+	
+for($i = 0; $i < 4; $i++) {
+   
+	 $code .= rand(0, 9);
+	
+}
+	
+imagestring($img, 5, 20, 20, $code, $black);
+
+	//加入噪点干扰
+	
+for($i=0;$i<500;$i++) {
+  
+	imagesetpixel($img, rand(0, 100) , rand(0, 100) , $black); 
+  
+	imagesetpixel($img, rand(0, 100) , rand(0, 100) , $green);
+	
+}
+	
+//输出验证码
+	
+header("content-type: image/png");
+	
+imagepng($img);
+
+	imagedestroy($img);
+
+
+
+	PHP图形操作之给图片添加水印:
+
+
+
+
+PHP数据库扩展:
+
+	$host = '127.0.0.1';
+$user = 'code1';
+$pass = '';
+
+	//在这里编写数据库连接代码
+	
+$link=mysql_connect($host,$user,$pass);
+	
+mysql_select_db('code1');//选择数据库
+	
+mysql_query("set names 'utf8'");//查询输出的编码格式为utf-8
+	$result = mysql_query('select * from user limit 1');
+	$row = mysql_fetch_assoc($result);//从查询的结果中取出一行
+
+
+
+	对于查询类的语句会返回一个资源句柄（resource），可以通过该资源获取查询结果集中的数据。
+	$row = mysql_fetch_array($res);
+	var_dump($row);
+
+
+	PHP数据库操作之插入新数据到MySQL中
+	
+	$sql = "insert into user(name, age, class) values('李四', 18, '高三一班')";
+	mysql_query($sql); //执行插入语句
+
+
+	$uid=mysql_insert_id();//在mysql中，执行插入语句以后，可以得到自增的主键id,通过PHP的mysql_insert_id函数可以获取该id。
+
+
+
+PHP数据库操作之查询分页数据:
+
+	假定当前页为$page，每页显示$n条数据，那么m为当前页 前面 所有的数据，
+	既$m = ($page-1) * $n，在知道了翻页原理以后，那么我们很容易通过构造SQL语句在PHP中实现数据翻页。
+
+	$page = 2;
+	n = 2;
+	$m = ($page - 1) * $n;
+	$sql = "select * from user limit $m, $n";
+	$result = mysql_query($sql);
+	//循环获取当前页的数据
+	$data = array();
+	while ($row = mysql_fetch_assoc($result)) {
+    		$data[] = $row;
+	}
+	在上面的例子中，我们使用了$m与$n变量来表示偏移量与每页数据条数，但我们推荐使用更有意义的变量名来表示，
+	比如$pagesize, $start, $offset等，这样更容易理解，有助于团队协作开发。
+
+	
+关闭MySQL连接:
+	mysql_close();
+	
