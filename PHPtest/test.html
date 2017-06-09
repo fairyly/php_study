@@ -39,6 +39,14 @@ body {
   width: 300px;
   margin: 0px auto;  
 }
+.formvery input{
+    width: 222px;
+    height: 40px;
+    line-height: 40px;
+}
+.formvery p{
+    line-height: 50px;
+}
 </style>
 <!--[if lte IE 7]>
 <style type="text/css">?
@@ -68,7 +76,7 @@ body {
     <form action="test.php" method="post">
         <p><input type="text" name="user"/></p>
         <p><input type="password" name="pass"/></p>
-        <p>验证码: <img id="captcha_img" border='1' src='./very.php?r=echo rand(); ?>' style="width:100px; height:30px" />
+        <p>验证码: <img id="captcha_img" border='1' src='./very.php?r=echo rand(); ?>' style="width:100px; height:40px" />
             <a href="javascript:void(0)" onclick="document.getElementById('captcha_img').src='./very.php?r='+Math.random()">换一个?<a>
         </p>
         <P>请输入验证码:<input type="text" name='authcode' value=''/></p>
