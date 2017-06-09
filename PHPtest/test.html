@@ -36,16 +36,24 @@ body {
     left: 0px;
 }
 .formvery{
-  width: 300px;
+  width: 500px;
   margin: 0px auto;  
 }
 .formvery input{
-    width: 222px;
+    width: 252px;
     height: 40px;
     line-height: 40px;
 }
 .formvery p{
     line-height: 50px;
+}
+.formvery p img{
+    width:100px; 
+    height:40px;
+    vertical-align: middle;
+}
+.formvery input.inputvery{
+    width: 150px;
 }
 </style>
 <!--[if lte IE 7]>
@@ -76,10 +84,10 @@ body {
     <form action="test.php" method="post">
         <p><input type="text" name="user"/></p>
         <p><input type="password" name="pass"/></p>
-        <p>验证码: <img id="captcha_img" border='1' src='./very.php?r=echo rand(); ?>' style="width:100px; height:40px" />
+        <p>验证码: <img id="captcha_img" border='1' src='./very.php?r=echo rand(); ?>'  />
             <a href="javascript:void(0)" onclick="document.getElementById('captcha_img').src='./very.php?r='+Math.random()">换一个?<a>
         </p>
-        <P>请输入验证码:<input type="text" name='authcode' value=''/></p>
+        <P>请输入验证码:<input type="text" name='authcode' value='' class="inputvery"/></p>
         <P><input type="submit" value="提交"></p>
     </form>
 </div>
