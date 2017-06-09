@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>方法1 - 未知高度的图片垂直居中 - www.cleanthem.com</title>
+<style type="text/css">
+body {
+    height:100%;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#box{
+    width:500px;
+    height:400px;
+    display:table;
+    text-align:center;
+    border:1px solid #d3d3d3;background:#fff;
+}
+#box span{
+    display:table-cell;
+    vertical-align:middle;
+    width:500px;
+    height:400px;
+}
+#box img{
+    border:1px solid #ccc;
+    max-width: 500px;
+    max-height: 400px;
+}
+#box .test{
+    position: absolute;
+    width: 500px;
+    height: 400px;
+    left: 0px;
+}
+.formvery{
+  width: 300px;
+  margin: 0px auto;  
+}
+</style>
+<!--[if lte IE 7]>
+<style type="text/css">?
+#box{
+    position:relative;
+    overflow:hidden;
+}
+#box span{
+    position:absolute;
+    left:50%;top:50%;
+}
+#box img{
+    position:relative;
+    left:-50%;top:-50%;
+}
+</style>
+<![endif]-->
+
+</head>
+
+<body>
+<div id="box">
+    <span><img src="images/1.jpg" alt="" /></span>
+    <div class="test"></div>
+</div>
+<div class="formvery">
+    <form action="test.php" method="post">
+        <p><input type="text" name="user"/></p>
+        <p><input type="password" name="pass"/></p>
+        <p>验证码: <img id="captcha_img" border='1' src='./very.php?r=echo rand(); ?>' style="width:100px; height:30px" />
+            <a href="javascript:void(0)" onclick="document.getElementById('captcha_img').src='./very.php?r='+Math.random()">换一个?<a>
+        </p>
+        <P>请输入验证码:<input type="text" name='authcode' value=''/></p>
+        <P><input type="submit" value="提交"></p>
+    </form>
+</div>
+
+
+</body>
+</html>
