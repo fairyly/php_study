@@ -81,14 +81,15 @@ body {
     <div class="test"></div>
 </div>
 <div class="formvery">
-    <form action="test.php" method="post">
+    <form action="test.php" method="post" enctype="multipart/form-data">
         <p><input type="text" name="user"/></p>
         <p><input type="password" name="pass"/></p>
+        <p><input type="file" name="file" id="file"/></p>
         <p>验证码: <img id="captcha_img" border='1' src='./very.php?r=echo rand(); ?>'  />
             <a href="javascript:void(0)" onclick="document.getElementById('captcha_img').src='./very.php?r='+Math.random()">换一个?<a>
         </p>
         <P>请输入验证码:<input type="text" name='authcode' value='' class="inputvery"/></p>
-        <P><input type="submit" value="提交"></p>
+        <P><input type="submit" name="submit" value="提交"></p>
     </form>
 </div>
 
