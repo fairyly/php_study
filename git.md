@@ -100,4 +100,4 @@ git push -u origin master
 
 - 有两个分支，dev和master，先更新dev分支文件后，切换git checkout master， git rebase dev，就把dev分支的文件合并到master分支中,然后提交；
 
--回退操作：git reset --hard （commit hash）
+- 回退操作：git reset --hard （commit hash）
