@@ -8,7 +8,7 @@
 
 ## docker-machine命令：
 
-- # Windows和OSX需要
+- #Windows和OSX需要
 - $ docker-machine create --driver virtualbox default #创建docker主机
 - $ docker-machine start default #启动docker主机
 - $ eval "$(docker-machine env default)" #配置docker主机连接信息
