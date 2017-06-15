@@ -21,3 +21,16 @@
 - $ docker run -it --rm --name test_node -v "$PWD":/usr/src/app -w /usr/src/app node:4 node script.js 
   直接执行nodejs程序
 - $ docker run -it --name study_node -v ~/work:/root -w /root node:4 bash  #创建容器
+
+
+>>>
+
+# Linux升级内核
+
+如果内核版本过低，可以用下面的命令升级系统内核。
+
+- Ubuntu 12.04 LTS  
+1.sudo apt-get install -y --install-recommends linux-generic-lts-trusty  
+- Ubuntu 14.04 LTS  
+2.sudo apt-get install -y --install-recommends linux-generic-lts-xenial  
+
