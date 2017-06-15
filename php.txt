@@ -789,6 +789,8 @@ $content = str_replace(" ", '&nbsp;', $content);
 	单个cookie的值最大只能存储4k
 	每次请求都要进行网络传输，占用带宽
 
+	
+	注释：session_start() 函数必须位于 <html> 标签之前：
 	session是将用户的会话数据存储在服务端，没有大小限制，
 	通过一个session_id进行用户识别，
 	PHP默认情况下session id是通过cookie来保存的，
@@ -1164,4 +1166,203 @@ PHP数据库操作之查询分页数据:
 	
 关闭MySQL连接:
 	mysql_close();
+
+
+
+JSON：
+	PHP json_encode() ：用于对变量进行 JSON 编码，该函数如果执行成功返回 JSON 数据，否则返回 FALSE 
+	string json_encode ( $value [, $options = 0 ] )
+	<?php
+       	$arr = array('a' => 1, 'b' => 2, 'c' => 3, 'd' => 4, 'e' => 5);
+   	echo json_encode($arr);
+	?>
+	以上代码执行结果为：
+	{"a":1,"b":2,"c":3,"d":4,"e":5}
+
+	以下实例演示了如何将 PHP 对象转换为 JSON 格式数据：
+	<?php
+   	class Emp {
+       		public $name = "";
+       		public $hobbies  = "";
+        	public $birthdate = "";
+   	}
+   	$e = new Emp();
+   	$e->name = "sachin";
+   	$e->hobbies  = "sports";
+   	$e->birthdate = date('m/d/Y h:i:s a', "8/5/1974 12:20:03 p");
+   	$e->birthdate = date('m/d/Y h:i:s a', strtotime("8/5/1974 12:20:03"));
+
+   	echo json_encode($e);
+	?>
+	以上代码执行结果为：
+	{"name":"sachin","hobbies":"sports","birthdate":"08\/05\/1974 12:20:03 pm"}
+      
+	json_decode：
+	PHP json_decode() 函数用于对 JSON 格式的字符串进行解码，并转换为 PHP 变量
+	json_string: 待解码的 JSON 字符串，必须是 UTF-8 编码数据
+
+	<?php
+   	$json = '{"a":1,"b":2,"c":3,"d":4,"e":5}';
+
+   	var_dump(json_decode($json));
+   	var_dump(json_decode($json, true));
+	?>
+	对象：是类的实例；必须  new 类名();实例化该类的对象
+
+
+
+
+mysql:
+	1.MySQLi - 面向对象方法
+	<?php
+	$servername = "localhost";
+	$username = "username";
+	$password = "password";
+ 
+	// 创建连接
+	$conn = new mysqli($servername, $username, $password);
+ 
+	// 检测连接
+	if ($conn->connect_error) {
+    		die("连接失败: " . $conn->connect_error);
+	} 
+	echo "连接成功";
+	
+
+	//创建数据库
+	$sql = "create database mytest";
+	if($conn->query($sql)===true){
+		echo "ok; ";
+	}else{
+		echo "fail";
+	}
+	
+	$conn->close();
+	?>
+
+	//创建数据表
+	<?php
+	$servername = "localhost";
+	$username = "username";
+	$password = "password";
+	$dbname = "myDB";
+
+	// 创建连接
+	$conn = new mysqli($servername, $username, $password, $dbname);
+	// 检测连接
+	if ($conn->connect_error) {
+	    die("连接失败: " . $conn->connect_error);
+	} 
+
+	// 使用 sql 创建数据表
+	$sql = "CREATE TABLE MyGuests (
+	id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+	firstname VARCHAR(30) NOT NULL,
+	lastname VARCHAR(30) NOT NULL,
+	email VARCHAR(50),
+	reg_date TIMESTAMP
+	)";
+
+	if ($conn->query($sql) === TRUE) {
+    		echo "Table MyGuests created successfully";
+	} else {
+    		echo "创建数据表错误: " . $conn->error;
+	}
+
+	$sqltable = "INSERT INTO MyGuests (firstname, lastname, email)
+	VALUES ('John', 'Doe', 'john@example.com')";
+
+	if ($conn->query($sqltable) === TRUE) {
+    		echo "新记录插入成功";
+	} else {
+    		echo "Error: " . $sql . "<br>" . $conn->error;
+	}
+
+	$conn->close();
+	?>
+
+
+	2.mysqli---面向过程
+	
+	<?php
+	$servername = "localhost";
+	$username = "username";
+	$password = "password";
+	$dbname = "myDB";
+
+	// 创建连接
+	$conn =mysqli_connect($servername, $username, $password, $dbname);
+	// 检测连接
+	if (!$conn) {
+	    die("连接失败: " . mysqli_connect_error());
+	} 
+
+	// 使用 sql 创建数据表
+	$sql = "CREATE TABLE MyGuests (
+	id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+	firstname VARCHAR(30) NOT NULL,
+	lastname VARCHAR(30) NOT NULL,
+	email VARCHAR(50),
+	reg_date TIMESTAMP
+	)";
+
+	if (mysqli_query($conn,$sql) === TRUE) {
+    		echo "Table MyGuests created successfully";
+	} else {
+    		echo "创建数据表错误: " . $conn->error;
+	}
+
+	$sqltable = "INSERT INTO MyGuests (firstname, lastname, email)
+	VALUES ('John', 'Doe', 'john@example.com')";
+
+	if (mysqli_query($conn,$sqltable) === TRUE) {
+    		echo "新记录插入成功";
+	} else {
+    		echo "Error: " . $sql . "<br>" . $conn->error;
+	}
+
+	mysqli_close($conn);
+	?>
+
+
+	3.PDO方法
+
+	<?php
+	$servername = "localhost";
+	$username = "username";
+	$password = "password";
+	$dbname = "myDB";
+
+	// 创建连接
+	try{
+		$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+		
+		// 设置 PDO 错误模式，用于抛出异常
+    		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+		// 使用 sql 创建数据表
+		$sql = "CREATE TABLE MyGuests (
+		id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+		firstname VARCHAR(30) NOT NULL,
+		lastname VARCHAR(30) NOT NULL,
+		email VARCHAR(50),
+		reg_date TIMESTAMP
+		)";
+		
+		// 使用 exec() ，没有结果返回 
+    		$conn->exec($sql);
+    		echo "数据表 MyGuests 创建成功";
+
+		$sql = "INSERT INTO MyGuests (firstname, lastname, email)
+   		 VALUES ('John', 'Doe', 'john@example.com')";
+    		// 使用 exec() ，没有结果返回 
+    		$conn->exec($sql);
+    		echo "新记录插入成功";
+
+	}
+	catch(PDOException $e){
+		echo $sql . "<br>" . $e->getMessage();	
+	}
+
+	$conn = null;
 	
