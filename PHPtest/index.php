@@ -655,28 +655,201 @@ for($i = 0; $i < 7; $i++){
 }
 
 //数组
+$arr = array();
+for ($i=0; $i < 20; $i++) { 
+	# code...
+	$arr[] = $i;
+}
+var_dump($arr);
+echo "<br/>";
+foreach ($arr as $key => $value) {
+	# code...
+	echo $key.":".$value."<br/>";
+}
+
+echo "<br/>";
+unset($arr[8]);
+echo "删除数组元素";
+var_dump($arr);
+echo "<br/>";
+array_splice($arr,10,2);
+var_dump($arr);
+foreach ($arr as $key => $value) {
+	# code...
+	echo $key.":".$value."<br/>";
+}
+echo "增大数组:<br/>";
+array_pad($arr,20,'hh');
+var_dump($arr);
+echo "<br/>";
+echo "追加数组：<br/>";
+$arry = array(444,555,777,222,444,555);
+$acon = array_merge($arr,$arry);
+var_dump($acon);
+echo "<br/>";
+echo "数组转字符串：<br/>";
+$astr = join(',',$arry);
+var_dump($astr);
+echo "<br/>";
+echo "数组转字符串：<br/>";
+$aay= explode(',',$astr);
+var_dump($aay);
+echo "<br/>";
+echo "数组检查键值是否存在：<br/>";
+if(array_key_exists(0, $arry))
+{
+	echo "存在：$arry[0]";
+}
+echo "<br/>";
+echo "数组检查是否包含某个元素：<br/>";
+$val = 444;
+if(in_array($val, $arry))
+{
+	echo "存在：$val";
+}
+echo "<br/>";
+$pos = array_search($val,$arry);
+if ($pos !== false) {
+	# code...
+	echo "$val 在数组中文位置：$pos";
+}
+echo "<br/>";
+echo max($arry);
+echo min($arry);
+echo "<br/>";
+$rearr = array_reverse($arry);
+var_dump($rearr);
+echo "<br/>";
+
+sort($rearr);
+var_dump($rearr);
+echo "<br/>";
+
+rsort($rearr);
+var_dump($rearr);
+echo "<br/>";
+
+$age= array('peter'=>444,'tom'=>555,'jom'=>777,'cat'=>222);
+ksort($age);
+var_dump($age);
+echo "<br/>";
+$arr1 = $arr2 = array("img12.png", "img10.png", "img2.png", "img1.png");
+echo "Standard string comparison\n";
+usort($arr1, "strcmp");
+print_r($arr1);
+echo "<br/>";
+
+$stuff = array('colors' => array('red','white','blue'),
+				'city' => array('bth','new york','chicago')
+		 );
+array_multisort($stuff['colors'],$stuff['city']);
+print_r($stuff);
+
+echo "<br/>";
+$unique = array_unique($arry);
+var_dump($unique);
+echo "<br/>";
+
+//array_walk使用用户自定义函数对数组中的每个元素做回调处理
+$fruits = array("d" => "lemon", "a" => "orange", "b" => "banana", "c" => "apple");
+array_push($fruit,"test","toil");
+function test_alter(&$item1, $key, $prefix)
+{
+    $item1 = "$prefix: $item1";
+}
+
+function test_print($item2, $key)
+{
+    echo "$key. $item2<br />\n";
+}
+
+echo "Before ...:\n";
+array_walk($fruits, 'test_print');
+echo "<br/>";
+
+$fruits = array("lemon", "orange", "banana", "apple");
+array_push($fruits,"test","toil");
+var_dump($fruits);
+echo " <br/>";
+
+$fruit = array('sweet' => array('a' => 'apple', 'b' => 'banana'), 'sour' => 'lemon');
+
+function test_printy($item, $key)
+{
+    echo "$key holds $item\n";
+}
+
+array_walk_recursive($fruit, 'test_printy');
+echo " <br/>";
+echo "计算两个数组的差集交集并集：";
+echo " <br/>";
+$old = array(444,555,777,222);
+$new = array(444,666,888,999,555,777,222);
+$diff = array_diff($new,$old);
+var_dump($diff);
+foreach ($diff as $key => $value) {
+	# code...
+	echo "$key:$value <br/>";
+}
+echo " <br/>";
+$bing = array_unique(array_merge($new,$old));
+var_dump($bing);
+echo " <br/>";
+foreach ($bing as $key => $value) {
+	# code...
+	echo "$key:$value <br/>";
+}
+echo " <br/>";
+$jiao = array_intersect($new,$old);
+var_dump($jiao);
+echo " <br/>";
+foreach ($jiao as $key => $value) {
+	# code...
+	echo "$key:$value <br/>";
+}
+echo " <br/>";
+echo getcwd() . "<br>";
+
+// Change directory
+chdir("images");
+
+// Get current directory
+echo getcwd();
+echo " <br/>";
+var_dump(gd_info());
+echo " <br/>";
+$dddd = isset($abc)? "1":"2";
+echo $dddd;
+echo " <br/>";
+$a = 1;
+$b = 2;
+list($a,$b) = array($b,$a);
+echo "交换a和b的值：".$a.$b;
+echo " <br/>";
+echo " <br/>";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 echo "<br/>";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ?>
 
 <!DOCTYPE html>
