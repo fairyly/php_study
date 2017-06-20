@@ -19,6 +19,9 @@
 		echo "<br/>";
 	}
 
+	$expire=time()+60*60*24*30;
+    setcookie("user", "runoob", $expire);
+
 	header("Content-Type:text/html;charset=utf-8");      //设置头部信息
 	  //isset()检测变量是否设置
 	if(isset($_REQUEST['authcode'])){
