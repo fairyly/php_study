@@ -161,7 +161,7 @@ $docker push new_image_name
 $docker build -t image_name Dockerfile_path  
 ```
 
-
+![](https://github.com/fairyly/php_study/tree/dev/docker_cmd.png)
 
 ---
 >>>
