@@ -3,7 +3,10 @@
 - 安装Kitematic：https://docs.docker.com/kitematic/ 
 - 最新的 Kitematic 发行版：https://github.com/docker/kitematic/releases
 - Docker从入门到实战：https://yeasy.gitbooks.io/docker_practice/content/
+<<<<<<< 9183e3f679bb25b10c2bee1d46b0febe2e3e5e15
 - Docker从入门到实战版本库：[https://github.com/fairyly/docker_practice](https://github.com/fairyly/docker_practice)
+=======
+>>>>>>> Update docker.md
 
 >>>
 
@@ -162,7 +165,11 @@ $docker push new_image_name
 $docker build -t image_name Dockerfile_path  
 ```
 
+<<<<<<< 9183e3f679bb25b10c2bee1d46b0febe2e3e5e15
 ![](https://github.com/fairyly/php_study/tree/dev/docker_cmd.png)
+=======
+
+>>>>>>> Update docker.md
 
 ---
 >>>
