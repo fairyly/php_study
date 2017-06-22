@@ -826,8 +826,47 @@ $b = 2;
 list($a,$b) = array($b,$a);
 echo "交换a和b的值：".$a.$b;
 echo " <br/>";
+$ads = create_function('$x,$y','return $x+$y;');
+$ads(2,3);
+echo $ads(2,3);
+
+
 echo " <br/>";
 
+
+class test{
+	var $a = 1;
+	public $name = "jphn";
+	function getName(){
+		return $this->name;
+	}
+	function getAge($a){
+		$this->age = $a;
+	}
+	function __construct(){
+        print "jjjj\n";
+
+    }
+    function __destruct(){
+        print "jj\n";
+    }
+    final public function con(){
+
+    }
+}
+// final class mysql(){
+
+// }
+$f = new test();//实例化的时候 会自动调用构造函数__construct，这里会输出一个字符串
+echo " <br/>";
+echo $f->getName(); 
+echo " <br/>";
+
+var_dump($f);
+echo " <br/>";
+
+unset($f);//实例销毁时候调用__destruct
+echo " <br/>";
 
 
 
