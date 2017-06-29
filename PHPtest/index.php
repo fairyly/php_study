@@ -869,8 +869,50 @@ unset($f);//实例销毁时候调用__destruct
 echo " <br/>";
 
 
+interface jiekou{
+	public function getName();
+	public function setName($name);
+}
+class imptest implements jiekou {
+	public $name;
+	public function getName(){
+		return $this->name;
+	}
+	public function setName($name){
+		$this->name = $name;
+	}
+}
+class Man{
+	const p = 12.544;
+}
 
 
+echo " <br/>";
+$path_parts = pathinfo('/www/htdocs/inc/lib.inc.php');//获取文件后缀名
+
+echo $path_parts['dirname'], "\n";echo " <br/>";
+echo $path_parts['basename'], "\n";echo " <br/>";
+echo $path_parts['extension'], "\n";echo " <br/>";
+echo $path_parts['filename'], "\n";echo " <br/>";
+
+echo " <br/>";
+
+
+define('radius',5)//定义全局常量
+//定义类常量
+class Math{
+	const p = 12.5;
+	const r = 2;
+
+	public function cal(){
+		return self::p + 10;
+	}
+}
+$area = math::p * math::r;
+echo $area;
+echo " <br/>";
+$cals = new Math();
+print $cals->cal();
 
 
 
