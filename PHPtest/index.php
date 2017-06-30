@@ -898,7 +898,7 @@ echo $path_parts['filename'], "\n";echo " <br/>";
 echo " <br/>";
 
 
-define('radius',5;//定义全局常量
+define('radius',5);//定义全局常量
 //定义类常量
 class Math{
 	const p = 12.5;
