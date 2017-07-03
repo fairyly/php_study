@@ -53,3 +53,5 @@
   - ftell($file) : 以字节为单位报告文件指针在文件中的位置;
   - fseek($file) : 将文件指针指向文件某个位置;
   - flock($file,LOCK_SH/EX/UN/NB) : 文件锁定;
+
+* 5 数组
