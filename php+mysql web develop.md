@@ -41,3 +41,14 @@
   - unlink(文件名) :  **删除文件**;
   - fwrite($file即打开的文件,$outputstring即写入的内容) : **写文件**,还可以用 fputs($file即打开的文件,$outputstring即写入的内容),
     还可以使用 file_put_contents ,file_put_content($file即打开的文件,$outputstring即写入的内容);
+  - feof($file即打开的文件) : 表示File End Of File,看是否读完文件, 文件指针指向结尾,返回true; 读文件时候判断书否读到文件末尾,常见: 
+    while(!feof($file)){#code}
+  - fgets($file即打开的文件), fgetss($file), fgetcsv($file): 每次读取一行数据;
+  - readfile($file), file($file), fpassthru($file) :读取整个文件;
+  - fgetc($file) : 读取一个字符;
+  - fread($file) :读取任意长度;
+  - file_exists($file) : 检查文件是否存在;
+  - filesize($file) : 确定文件大小;
+  - rewind($file) : 将文件指针复位到文件开始;
+  - ftell($file) : 以字节为单位报告文件指针在文件中的位置;
+  - fseek($file) : 将文件指针指向文件某个位置;
