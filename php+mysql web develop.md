@@ -26,3 +26,9 @@
   - is_scallar() : 检查变量是否是标量,即一个整数,布尔值,字符串或浮点数;
   - is_numberic() : 检查变量是否是任何类型的数字或数字字符串;
   - is_callaber() : 检查变量是否是有效的函数名称。
+
+* 3 测试变量类型  变量状态
+  - gettype($a)
+  - settype($a,'double')
+  - isset($a) 变量是否存在
+  - unset($a) 销毁变量
