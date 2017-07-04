@@ -78,4 +78,17 @@
   - _toString()
   
 ## 第二篇 MySQL
+
   - 登陆 : mysql -h 127.0.0.1 -u root -p
+  - 使用数据库 : use databasename;
+  - 
+  
+  ** 注意：进入MySQL中，每个命令执行都是以 ** **;**结尾,不然不会执行;
+  
+  - create database web : 创建数据库命令
+  - 用户和权限 : grant , revoke
+  - 创建数据表 : create table tablename(id int not null auto_increment primary key,name char(50) not null);
+  - 查看数据库列表 ： show databases;
+  - 查看所有数据表 : show tables;
+  - 查看特定表详细信息 : describe books;
+  - 创建索引 : create index indexname on tablename;
