@@ -77,4 +77,5 @@
   - getTraceAsString()
   - _toString()
   
-
+## 第二篇 MySQL
+  - 登陆 : mysql -h 127.0.0.1 -u root -p
