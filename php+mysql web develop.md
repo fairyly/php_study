@@ -83,7 +83,7 @@
   - 使用数据库 : use databasename;
   - 
   
-  ** 注意：进入MySQL中，每个命令执行都是以 ** **;**结尾,不然不会执行;
+  - ** 注意：进入MySQL中，每个命令执行都是以 ** `;` 结尾,不然不会执行;
   
   - create database web : 创建数据库命令
   - 用户和权限 : grant , revoke
