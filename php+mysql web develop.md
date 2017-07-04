@@ -55,3 +55,26 @@
   - flock($file,LOCK_SH/EX/UN/NB) : 文件锁定;
 
 * 5 数组
+
+
+
+* 6 异常内置类-Exception
+  - try  
+    {  
+        throw new Exception("Error Processing Request", 1);  
+    }  
+    catch(Exception $e)  
+    {  
+        echo $e->getCode();  
+    }  
+
+  - 内置方法
+  - getCode() : 返回传递给构造函数的代码;
+  - getMessage()
+  - getFile()
+  - getLine()
+  - getTrace()
+  - getTraceAsString()
+  - _toString()
+  
+
