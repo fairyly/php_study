@@ -86,9 +86,20 @@
   - ** 注意：进入MySQL中，每个命令执行都是以 ** `;` 结尾,不然不会执行;
   
   - create database web : 创建数据库命令
+  - drop database web : 删除数据库;
+  
   - 用户和权限 : grant , revoke
   - 创建数据表 : create table tablename(id int not null auto_increment primary key,name char(50) not null);
+  - 删除数据表 : drop table tablename;
+  - 修改数据表字段 : alter table tablename modify name char(70) not nulll;
+  - 增加数据表字段 : alter table tablename add distance float(6,2) not null after price;//在price字段后增加distance字段
+  - 删除一列，即删除一个字段 : alter table tablename drop distance;
+  
   - 查看数据库列表 ： show databases;
   - 查看所有数据表 : show tables;
   - 查看特定表详细信息 : describe books;
   - 创建索引 : create index indexname on tablename;
+  - 插入数据 : insert into tablename values ();
+  - 更新数据 : update tabalename set bookprice = bookprice+1.5 [where bookid=115];
+  - 删除数据 : delete from tablename where bookid=12;
+  
