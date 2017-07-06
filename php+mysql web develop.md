@@ -102,6 +102,7 @@
   - 查看特定表详细信息 : describe books;
   - 创建索引 : create index indexname on tablename;
   - 插入数据 : insert into tablename values ();
+  - 自增id数据插入 : $query = "insert into customers values (NULL,'".$name."','".$address."','".$city."')";
   - 更新数据 : update tabalename set bookprice = bookprice+1.5 [where bookid=115];
   - 删除数据 : delete from tablename where bookid=12;
   
