@@ -79,7 +79,7 @@
   
 ## 第二篇 MySQL
 
-  - 登陆 : mysql -h 127.0.0.1 -u root -p
+  - 命令行登陆 : mysql -h 127.0.0.1 -u root -p
   - 使用数据库 : use databasename;
   - 
   
@@ -105,3 +105,15 @@
   - 更新数据 : update tabalename set bookprice = bookprice+1.5 [where bookid=115];
   - 删除数据 : delete from tablename where bookid=12;
   
+* 若显示中文或可以在数据库中插入中文数据，需设置
+
+```php
+  header("Content-type: text/html; charset=utf-8");//设置编码，防止乱码
+  mb_internal_encoding('UTF-8'); 
+  mb_http_output('UTF-8'); 
+  mb_http_input('UTF-8'); 
+  mb_regex_encoding('UTF-8'); 
+  
+  mysqli_set_charset($conn, "utf8");
+```
+
