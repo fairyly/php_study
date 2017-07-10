@@ -118,3 +118,9 @@
   mysqli_set_charset($conn, "utf8");
 ```
 
+* 使用ajax发送请求，PHP接收数据并返回
+
+```
+    $data = $_POST;
+    echo json_encode($data);
+```
