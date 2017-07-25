@@ -126,3 +126,27 @@ PHP_EOL : 换行;
     $data = $_POST;
     echo json_encode($data);
 ```
+
+* 解析 url 和 email MX记录
+  - parse_url — 解析 URL，返回其组成部分
+  - gethostbyname($host) :获得该url主机的IP地址，如果存在返回IP，不存在返回false;
+`
+    $url = "http://www.baidu.com";
+    $u = parse_url($url);
+    $host = $u['host'];
+    $ip = gethostbyname($host);
+`
+
+`
+$email = "yueheqing@tusdk.com";
+$email = explode('@', $email);
+var_dump($email);
+
+$emailhost = $email[1];
+
+dns_get_mx($emailhost,$mxhostsarr);
+foreach ($mxhostsarr as $key => $value) {
+	echo $key.'/'.$value;
+	# code...
+}
+`
