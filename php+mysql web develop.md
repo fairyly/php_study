@@ -205,3 +205,11 @@ foreach ($mxhostsarr as $key => $value) {
   
     ftp_quit($conn);
     
+* 日期和时间
+  - time():时间戳;
+  - date("Y-m-d H:i:s",time()): 当前日期和时间;
+  - mktime(): 将日期和时间转换成UNIX时间戳;
+  - getdate():返回日期时间的数组;
+  - checkdate():检查日期的有效性;
+  - strftime('%c'): 格式化时间戳;
+  - microtime(): 使用微妙;
