@@ -153,15 +153,16 @@ foreach ($mxhostsarr as $key => $value) {
 }
 ```
 * 从FTP服务器下载最新版本文件脚本
-  - 1.连接远程FTP服务器;
+
+  - .连接远程FTP服务器;
   
     $conn = ftp_connect($host);
     
-  - 2.登录FTP服务器;
+  - .登录FTP服务器;
   
     $result = @ftp_login($host,$user,$pass);
     
-  - 3.检查远程文件是否更新;
+  - .检查远程文件是否更新;
   
 ```
     if(file_exists($loclfile)){//确认是否存在本地文件副本,  
@@ -172,7 +173,7 @@ foreach ($mxhostsarr as $key => $value) {
     然后比较$localtime 和 $remotetime;
 ```
     
-  - 4.如果更新过，下载文件;
+  - .如果更新过，下载文件;
   
 ```
     $fp = fopen($localfile,'w');//打开本地文件  
@@ -201,7 +202,7 @@ foreach ($mxhostsarr as $key => $value) {
     
 ```
     
-  - 5.关闭FTP连接;
+  - .关闭FTP连接;
   
     ftp_quit($conn);
     
