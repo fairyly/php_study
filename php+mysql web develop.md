@@ -214,3 +214,33 @@ foreach ($mxhostsarr as $key => $value) {
   - checkdate():检查日期的有效性;
   - strftime('%c'): 格式化时间戳;
   - microtime(): 使用微妙;
+
+
+* 创建图像
+  - 创建画布 ：imagecreatetruecolor($width, $height);
+  - 选择颜色 ：$color = imagecolorallocate($img,107,107,107);
+  - 填充背景 ： imagefill($img,0,0,$green);
+  - 画线     ：imageline($img,0,0,$w, $h,$color);
+  - 画文字   ：imagestring($img,14,50,150,'dalee',$red);
+
+  - 输出：header('Content-type:image/png');
+          imagepng($img);
+
+  - 销毁： imagedestroy($img);
+  
+  - //加入噪点干扰
+  ```
+       for($i=0;$i<100;$i++) {
+         imagesetpixel($img, rand(0, 100) , rand(0, 100) , $black); 
+         imagesetpixel($img, rand(0, 100) , rand(0, 100) , $green);
+         imagesetpixel($img, rand(0, 100) , rand(0, 100) , $red); 
+       }
+  ```
+  - //加入干扰线
+  ```
+    for($j=0;$j<5;$j++){
+        imageline($img, rand(0, 100) , rand(0, 100) , rand(0, 10) , rand(0, 100) , $black); 
+        imageline($img, rand(0, 100) , rand(0, 100) , rand(0, 10) , rand(0, 100) , $green);
+        imageline($img, rand(0, 100) , rand(0, 100) , rand(0, 10) , rand(0, 100) , $red);
+    }
+  ```
