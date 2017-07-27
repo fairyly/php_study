@@ -156,7 +156,7 @@ foreach ($mxhostsarr as $key => $value) {
 
   - (1).连接远程FTP服务器;
   
-  $conn = ftp_connect($host);
+    $conn = ftp_connect($host);
     
   - (2).登录FTP服务器;
   
@@ -164,43 +164,43 @@ foreach ($mxhostsarr as $key => $value) {
     
   - (3).检查远程文件是否更新;
   
-  ```
-    if(file_exists($loclfile)){//确认是否存在本地文件副本,  
-    	$localtime = filemtime($localfile) //获取文件最后修改时间  
-    }  
-    //获取远程文件修改时间  
-    $remotefiletime = ftp_mdtm($conn,$remotefile);  
-    然后比较$localtime 和 $remotetime;
-  ```
+    ```
+      if(file_exists($loclfile)){//确认是否存在本地文件副本,  
+      	$localtime = filemtime($localfile) //获取文件最后修改时间  
+      }  
+      //获取远程文件修改时间  
+      $remotefiletime = ftp_mdtm($conn,$remotefile);  
+      然后比较$localtime 和 $remotetime;
+    ```
     
   - (4).如果更新过，下载文件;
   
-  ```
-    $fp = fopen($localfile,'w');//打开本地文件  
-    ftp_fget($conn,$fp,$re,otefile,FTP_BINARY);//下载文件存储本地  
-    $fclose($fp);  
+      ```
+      $fp = fopen($localfile,'w');//打开本地文件  
+      ftp_fget($conn,$fp,$re,otefile,FTP_BINARY);//下载文件存储本地  
+      $fclose($fp);  
     
-    上传文件： ftp_fput(),ftp_put();
-    $file = 'somefile.txt';
-    $remote_file = 'readme.txt';
+      上传文件： ftp_fput(),ftp_put();
+      $file = 'somefile.txt';
+      $remote_file = 'readme.txt';
 
-    // set up basic connection
-    $conn_id = ftp_connect($ftp_server);
+      // set up basic connection
+      $conn_id = ftp_connect($ftp_server);
 
-    // login with username and password
-    $login_result = ftp_login($conn_id, $ftp_user_name, $ftp_user_pass);
+      // login with username and password
+      $login_result = ftp_login($conn_id, $ftp_user_name, $ftp_user_pass);
 
-    // upload a file
-    if (ftp_put($conn_id, $remote_file, $file, FTP_ASCII)) {
-     echo "successfully uploaded $file\n";
-    } else {
-     echo "There was a problem while uploading $file\n";
-    }
+      // upload a file
+      if (ftp_put($conn_id, $remote_file, $file, FTP_ASCII)) {
+       echo "successfully uploaded $file\n";
+      } else {
+       echo "There was a problem while uploading $file\n";
+      }
 
-    // close the connection
-    ftp_close($conn_id);
+      // close the connection
+      ftp_close($conn_id);
     
-  ```
+      ```
     
   - (5).关闭FTP连接;
   
