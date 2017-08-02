@@ -243,11 +243,12 @@ foreach ($mxhostsarr as $key => $value) {
 
 
 * 创建图像
-  - 创建画布 ：imagecreatetruecolor($width, $height);
+  - 创建画布 ：$img = imagecreatetruecolor($width, $height);
   - 选择颜色 ：$color = imagecolorallocate($img,107,107,107);
   - 填充背景 ： imagefill($img,0,0,$green);
   - 画线     ：imageline($img,0,0,$w, $h,$color);
   - 画文字   ：imagestring($img,14,50,150,'dalee',$red);
+  - 画中文   ：$text = "回忆经典"; $font = 'Semibold.ttf';imagettftext($img, 20, 0, 12, 21, $red, $font, $text);
 
   - 输出：header('Content-type:image/png');
           imagepng($img);
