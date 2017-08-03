@@ -181,7 +181,7 @@ class Foo
 
 
 
-# 二.「PSR 规范」PSR-2 编码风格规范
+# （二.）「PSR 规范」PSR-2 编码风格规范
 
 ## 编码风格指南
 
@@ -901,7 +901,7 @@ PHP 开始标签后，是否需要一个空行？
         same/same/same: 6
 
 
-# 三.「PSR 规范」PSR-3 日志接口规范
+# （三.）「PSR 规范」PSR-3 日志接口规范
 
 ## 日志接口规范
 
@@ -1161,7 +1161,7 @@ class LogLevel
 ```
 
 
-# 四.「PSR 规范」PSR-4 自动加载规范
+# （四.）「PSR 规范」PSR-4 自动加载规范
 
 ## 1. 概述
 
@@ -1229,7 +1229,7 @@ class LogLevel
 > 注意：实例并 **不** 属于规范的一部分，且随时 **会** 有所变动。
 
 
-# 六.「PSR 规范」PSR-6 缓存接口规范
+# （六.）「PSR 规范」PSR-6 缓存接口规范
 
 ## 介绍
 
@@ -1613,7 +1613,7 @@ interface InvalidArgumentException extends CacheException
 
 
 
-# 七.「PSR 规范」PSR-7 HTTP 消息接口规范
+# （七.）「PSR 规范」PSR-7 HTTP 消息接口规范
 
 
 # HTTP消息接口
