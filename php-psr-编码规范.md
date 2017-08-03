@@ -8,7 +8,7 @@
 * [6.缓存接口规范](https://laravel-china.org/topics/2082/psr-specification-psr-6-cache-interface-specification)
 * [7.HTTP 消息接口规范](https://github.com/summerblue/psr.phphub.org/blob/master/psrs/%E3%80%8CPSR%20%E8%A7%84%E8%8C%83%E3%80%8DPSR-7%20HTTP%20%E6%B6%88%E6%81%AF%E6%8E%A5%E5%8F%A3%E8%A7%84%E8%8C%83.md)
 
-## 1.基本代码规范
+# 一.基本代码规范
 
 本篇规范制定了代码基本元素的相关标准，以确保共享的PHP代码间具有较高程度的技术互通性。
 
@@ -177,7 +177,7 @@ class Foo
 
 
 
-# 2.「PSR 规范」PSR-2 编码风格规范
+# 二.「PSR 规范」PSR-2 编码风格规范
 
 ## 编码风格指南
 
@@ -897,7 +897,7 @@ PHP 开始标签后，是否需要一个空行？
         same/same/same: 6
 
 
-# 3.「PSR 规范」PSR-3 日志接口规范
+# 三.「PSR 规范」PSR-3 日志接口规范
 
 ## 日志接口规范
 
@@ -1157,7 +1157,7 @@ class LogLevel
 ```
 
 
-# 4.「PSR 规范」PSR-4 自动加载规范
+# 四.「PSR 规范」PSR-4 自动加载规范
 
 ## 1. 概述
 
@@ -1225,7 +1225,7 @@ class LogLevel
 > 注意：实例并 **不** 属于规范的一部分，且随时 **会** 有所变动。
 
 
-# 6.「PSR 规范」PSR-6 缓存接口规范
+# 六.「PSR 规范」PSR-6 缓存接口规范
 
 ## 介绍
 
@@ -1608,7 +1608,8 @@ interface InvalidArgumentException extends CacheException
 ```
 
 
-#「PSR 规范」PSR-7 HTTP 消息接口规范
+
+# 七.「PSR 规范」PSR-7 HTTP 消息接口规范
 
 
 # HTTP消息接口
