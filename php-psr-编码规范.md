@@ -1,6 +1,6 @@
 # 「PSR 规范」PSR-1 基础编码规范
 * https://psr.phphub.org/
-* PHP 标准规范
+* [PHP 标准规范:](https://psr.phphub.org/)
 * [基础编码规范](https://laravel-china.org/topics/2078/psr-specification-psr-1-basic-coding-specification)
 * [编码风格规范](https://laravel-china.org/topics/2079/psr-specification-psr-2-coding-style-specification)
 * [日志接口规范](https://laravel-china.org/topics/2080/psr-specification-psr-3-log-interface-specification)
