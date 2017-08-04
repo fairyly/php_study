@@ -35,6 +35,17 @@
 
 常量全部用大写字母；
 
+```
+常用设置：
+header('Access-Control-Allow-Origin:*');
+/* 设置内部字符编码为 UTF-8 */
+header('Content-Type: text/html; charset=UTF-8');
+mb_internal_encoding('UTF-8'); 
+mb_http_output('UTF-8'); 
+mb_http_input('UTF-8'); 
+mb_regex_encoding('UTF-8'); 
+```
+
 PHP_EOL : 换行;
 
 * 1 超级全局变量
@@ -240,6 +251,7 @@ foreach ($mxhostsarr as $key => $value) {
   - checkdate():检查日期的有效性;
   - strftime('%c'): 格式化时间戳;
   - microtime(): 使用微妙;
+  - date_default_timezone_set("Asia/Shanghai"): 设置时区;
 
 
 * 创建图像
@@ -277,3 +289,5 @@ foreach ($mxhostsarr as $key => $value) {
 * eval("echo 'hello';"); 计算出php代码字符串的值;
 * exit; 终止执行; 或者---exit("提示信息");
 * die; 终止执行,  或者---die("提示信息");
+
+
