@@ -120,7 +120,43 @@ PHP_EOL : 换行;
   - getTrace()
   - getTraceAsString()
   - _toString()
-  
+
+* 函数 
+
+```
+class PersonFace
+{
+    public $name;
+    public static function getName()
+    {
+        return $this->name;
+        if ($i>1) {
+            # code...
+            for ($i=0; $i < 10; $i++) { 
+                # code...
+            }
+        }
+    }
+    final public function setName($name)
+    {
+        $this->name = $name;
+        echo $name."<br/>";
+    }
+}
+
+class Men extends PersonFace
+{
+    public $tryCathl;
+    public function __construct()
+    {
+        parent::setName("build");
+    }
+}
+
+$b = new Men();
+$b->setName("john");
+```
+  
 ## 第二篇 MySQL
 
   - 命令行登陆 : mysql -h 127.0.0.1 -u root -p
