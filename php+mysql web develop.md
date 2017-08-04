@@ -33,7 +33,92 @@
 
 ## 第一篇 PHP快速入门
 
-常量全部用大写字母；
+- PHP代码 必须 使用 <?php ?> 长标签 或 <?= ?> 短输出标签;
+
+- 常量: 全部用大写字母,单词间用下划线分隔;
+- 变量：一般小写;
+- PHP所有 关键字 必须 全部小写;
+- 常量 true 、false 和 null 也 必须 全部小写;
+- 所有PHP文件 必须 以一个空白行作为结束;
+- 纯PHP代码文件 必须 省略最后的 ?> 结束标签;
+
+- namespace 声明后 必须 插入一个空白行。  
+  所有 use 必须 在 namespace 后声明。  
+  每条 use 声明语句 必须 只有一个 use 关键词。  
+  use 声明语句块后 必须 要有一个空白行。
+  ```
+  <?php
+  // PHP 5.3及以后版本的写法
+  namespace Vendor\Model;
+
+  class Foo
+  {
+  }
+  ```
+
+- 类的命名 必须 遵循 StudlyCaps 大写开头的驼峰命名规范;  
+  每个类都独立为一个文件，且命名空间至少有一个层次：顶级的组织名称（vendor name）;  
+  方法名称 必须 符合 camelCase 式的小写开头驼峰命名规范;  
+  类的开始花括号 必须 独占一行，结束花括号也 必须 在类主体后独占一行;  
+  ```
+  <?php
+  namespace Vendor\Package;
+
+  use FooClass;
+  use BarClass as Bar;
+  use OtherVendor\OtherPackage\BazClass;
+
+  class ClassName extends ParentClass implements \ArrayAccess, \Countable
+  {
+    // 这里面是常量、属性、类方法
+  }
+  ```
+  implements 的继承列表也 可以 分成多行，这样的话，每个继承接口名称都 必须 分开独立成行，包括第一个  
+  ```
+  <?php
+  namespace Vendor\Package;
+
+  use FooClass;
+  use BarClass as Bar;
+  use OtherVendor\OtherPackage\BazClass;
+
+  class ClassName extends ParentClass implements
+    \ArrayAccess,
+    \Countable,
+    \Serializable
+  {
+    // 这里面是常量、属性、类方法
+  }
+  ```
+  每个属性都 必须 添加访问修饰符;
+
+  一定不可 使用关键字 var 声明一个属性;  
+  类的属性命名 可以 遵循：  
+    - 大写开头的驼峰式 ($StudlyCaps)
+    - 小写开头的驼峰式 ($camelCase)
+    - 下划线分隔式 ($under_score)
+  方法名称后 一定不可 有空格符，其开始花括号 必须 独占一行，  
+  结束花括号也 必须 在方法主体后单独成一行。参数左括号后和右括号前  
+  一定不可 有空格。
+  
+  方法的参数：
+    - 参数列表中，每个逗号后面 必须 要有一个空格，而逗号前面 一定不可 有空格。
+
+    - 有默认值的参数，必须 放到参数列表的末尾。
+  
+  ```
+  <?php
+  namespace Vendor\Package;
+
+  class ClassName
+  {
+    public function fooBarBaz($arg1, &$arg2, $arg3 = [])
+    {
+        // method body
+    }
+  }
+  ```
+- 
 
 ```
 常用设置：
