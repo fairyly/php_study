@@ -271,3 +271,9 @@ foreach ($mxhostsarr as $key => $value) {
         imageline($img, rand(0, 100) , rand(0, 100) , rand(0, 10) , rand(0, 100) , $red);
     }
   ```
+
+## eval(),exit() or die();
+
+* eval("echo 'hello';"); 计算出php代码字符串的值;
+* exit; 终止执行; 或者---exit("提示信息");
+* die; 终止执行,  或者---die("提示信息");
