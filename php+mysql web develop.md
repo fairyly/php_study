@@ -58,8 +58,9 @@
 
 - 类的命名 必须 遵循 StudlyCaps 大写开头的驼峰命名规范;  
   每个类都独立为一个文件，且命名空间至少有一个层次：顶级的组织名称（vendor name）;  
-  方法名称 必须 符合 camelCase 式的小写开头驼峰命名规范;  
+  
   类的开始花括号 必须 独占一行，结束花括号也 必须 在类主体后独占一行;  
+  方法名称 必须 符合 camelCase 式的小写开头驼峰命名规范;  
   ```
   <?php
   namespace Vendor\Package;
@@ -90,6 +91,7 @@
     // 这里面是常量、属性、类方法
   }
   ```
+  
   每个属性都 必须 添加访问修饰符;
 
   一定不可 使用关键字 var 声明一个属性;  
@@ -118,7 +120,26 @@
     }
   }
   ```
-- 
+- 需要添加 abstract 或 final 声明时，必须 写在访问修饰符前，而 static 则 必须 写在其后。
+  ```
+  <?php
+  namespace Vendor\Package;
+
+  abstract class ClassName
+  {
+    protected static $foo;
+
+    abstract protected function zim();
+
+    final public static function bar()
+    {
+        // method body
+    }
+  }
+  ```
+  
+- 访问修饰符: public private protect
+
 
 ```
 常用设置：
