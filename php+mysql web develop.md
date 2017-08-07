@@ -154,6 +154,22 @@ mb_regex_encoding('UTF-8');
 
 PHP_EOL : 换行;
 
+- 错误提示  
+  // 关闭错误报告
+  error_reporting(0);
+
+  // 报告 runtime 错误
+  error_reporting(E_ERROR | E_WARNING | E_PARSE);
+
+  // 报告所有错误
+  error_reporting(E_ALL);
+
+  // 等同 error_reporting(E_ALL);
+  ini_set("error_reporting", E_ALL);
+
+  // 报告 E_NOTICE 之外的所有错误
+  error_reporting(E_ALL & ~E_NOTICE);
+
 * 1 超级全局变量
   - $GLOBALS  ------ 所有全局变量数组
   - $_SERVER  ------ 服务器环境变量数组
