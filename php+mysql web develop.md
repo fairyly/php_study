@@ -441,6 +441,20 @@ foreach ($mxhostsarr as $key => $value) {
         imageline($img, rand(0, 100) , rand(0, 100) , rand(0, 10) , rand(0, 100) , $red);
     }
   ```
+  - 从已知图片绘图
+  
+  ```
+  $w = 200;
+  $h = 200;
+  $imgname = './images/1.jpg';
+  header('Content-type:image/png');
+
+  $img = imagecreatefromjpeg($imgname);
+
+  imagepng($img,null,0);
+
+  imagedestroy($img);
+  ```
 
 ## eval(),exit() or die();
 
