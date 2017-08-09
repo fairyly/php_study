@@ -303,14 +303,33 @@ $b->setName("john");
   - 查看所有数据表 : show tables;
   - 查看特定表详细信息 : describe books;
   - 创建索引 : create index indexname on tablename;
-  - 插入数据 : insert into tablename values ();
+  - 插入数据 : insert into tablename values ('');
   - 自增id数据插入 : $query = "insert into customers values (NULL,'".$name."','".$address."','".$city."')";
   - 更新数据 : update tabalename set bookprice = bookprice+1.5 [where bookid=115];
   - 删除数据 : delete from tablename where bookid=12;
   
+  ```
+  $query = "select * from books where ".$type. " like '%".$item."%'";
+  $res = $db->query($query );
+
+  $rows = $res->num_rows;
+  echo $rows."<br/>";
+  //输出每行数据
+  for ($i=0; $i < $rows; $i++) { 
+    # code...
+    $rowdata = $res->fetch_assoc();
+    echo htmlspecialchars(stripcslashes($rowdata['title']))."<br/>";
+    echo stripcslashes($rowdata['author'])."<br/>";
+    echo stripcslashes($rowdata['isbn'])."<br/>";
+
+  }
+  $res->free();//释放结果集
+  $db->close();//关闭连接
+  ```
+  
 * 若显示中文或可以在数据库中插入中文数据，需设置
 
-```php
+  ```
   header("Content-type: text/html; charset=utf-8");//设置编码，防止乱码
   mb_internal_encoding('UTF-8'); 
   mb_http_output('UTF-8'); 
@@ -318,7 +337,7 @@ $b->setName("john");
   mb_regex_encoding('UTF-8'); 
   
   mysqli_set_charset($conn, "utf8");
-```
+  ```
 
 * 使用ajax发送请求，PHP接收数据并返回
 
