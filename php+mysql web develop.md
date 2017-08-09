@@ -328,17 +328,62 @@ $b->setName("john");
   
   //PDO方式
   try{
-    $obj = new PDO('mysql:host=localhost;dbname=localhost' ,  'root'  ,  '123456');//生成PDO示例
+    $host = 'localhost';
+    $user ='root';
+    $pass = '';
+    $dbname = 'book_sc';
+    $dns = "mysql:host=$host;dbname=$dbname";
+    
+    @ $conn = new PDO($dns,$user,$pass);
+    
     $obj ->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);//设置以异常的形式报错
     $obj ->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE , PDO::FETCH_ASSOC );//设置fetch时返回数据形式为数组
-    $ps = $obj->prepare("SELECT *  FROM `article` WHERE `type` = ? and `menu` = ?");//生成一个PDOStatement实例
-    $ps->bindValue(1 , "文章");//第一个？处的参数换成 文章，不需要附加任何处理
-    $ps->bindValue(2 , 2);//第二个？处的参数换成2，不需要附加任何处理
-    $ps->execute(); //正式执行。
-    $res = $ps->fetchAll();//得到查询结果
+    
+    $query = "insert into customers values (NULL,'".$name."','".$address."','".$city."','11','ads','123')"; //插入id自增数据
+    $ps = $conn->prepare($query);
+    $res = $ps->execute(); //正式执行。
+    
   } catch(Exception $e){
     exit($e->getMessage());
   }
+  
+  try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    // 设置 PDO 错误模式为异常
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+ 
+    // 预处理 SQL 并绑定参数
+    $stmt = $conn->prepare("INSERT INTO MyGuests (firstname, lastname, email) 
+    VALUES (:firstname, :lastname, :email)");
+    $stmt->bindParam(':firstname', $firstname);
+    $stmt->bindParam(':lastname', $lastname);
+    $stmt->bindParam(':email', $email);
+ 
+    // 插入行
+    $firstname = "John";
+    $lastname = "Doe";
+    $email = "john@example.com";
+    $stmt->execute();
+ 
+    // 插入其他行
+    $firstname = "Mary";
+    $lastname = "Moe";
+    $email = "mary@example.com";
+    $stmt->execute();
+ 
+    // 插入其他行
+    $firstname = "Julie";
+    $lastname = "Dooley";
+    $email = "julie@example.com";
+    $stmt->execute();
+ 
+    echo "新记录插入成功";
+  }
+  catch(PDOException $e)
+  {
+    echo "Error: " . $e->getMessage();
+  }
+  $conn = null;
   ```
   
 * 若显示中文或可以在数据库中插入中文数据，需设置
