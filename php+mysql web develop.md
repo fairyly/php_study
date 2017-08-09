@@ -325,6 +325,20 @@ $b->setName("john");
   }
   $res->free();//释放结果集
   $db->close();//关闭连接
+  
+  //PDO方式
+  try{
+    $obj = new PDO('mysql:host=localhost;dbname=localhost' ,  'root'  ,  '123456');//生成PDO示例
+    $obj ->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);//设置以异常的形式报错
+    $obj ->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE , PDO::FETCH_ASSOC );//设置fetch时返回数据形式为数组
+    $ps = $obj->prepare("SELECT *  FROM `article` WHERE `type` = ? and `menu` = ?");//生成一个PDOStatement实例
+    $ps->bindValue(1 , "文章");//第一个？处的参数换成 文章，不需要附加任何处理
+    $ps->bindValue(2 , 2);//第二个？处的参数换成2，不需要附加任何处理
+    $ps->execute(); //正式执行。
+    $res = $ps->fetchAll();//得到查询结果
+  } catch(Exception $e){
+    exit($e->getMessage());
+  }
   ```
   
 * 若显示中文或可以在数据库中插入中文数据，需设置
