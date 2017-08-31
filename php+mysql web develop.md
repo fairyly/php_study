@@ -540,4 +540,17 @@ foreach ($mxhostsarr as $key => $value) {
 * exit; 终止执行; 或者---exit("提示信息");
 * die; 终止执行,  或者---die("提示信息");
 
+## 两种方法清空memcache缓存
+
+```
+默认memcache会监听11221端口，如果想清空服务器上memecache的缓存，大家一般使用的是：
+telnet localhost 11211
+flush_all
+
+同样也可以使用：
+echo "flush_all" | nc localhost 11211
+
+使用flush_all 后并不是删除memcache上的key，而是置为过期
+```
+
 
