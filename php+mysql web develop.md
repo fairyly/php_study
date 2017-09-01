@@ -103,10 +103,12 @@
   结束花括号也 必须 在方法主体后单独成一行。参数左括号后和右括号前  
   一定不可 有空格。
   
+  
+  
   方法的参数：
-    - 参数列表中，每个逗号后面 必须 要有一个空格，而逗号前面 一定不可 有空格。
+  - 参数列表中，每个逗号后面 必须 要有一个空格，而逗号前面 一定不可 有空格。
 
-    - 有默认值的参数，必须 放到参数列表的末尾。
+  - 有默认值的参数，必须 放到参数列表的末尾。
   
   ```
   <?php
@@ -384,8 +386,10 @@ $b->setName("john");
     echo "Error: " . $e->getMessage();
   }
   $conn = null;
-  ```
   
+  ```
+
+
 * 若显示中文或可以在数据库中插入中文数据，需设置
 
   ```
@@ -396,6 +400,7 @@ $b->setName("john");
   mb_regex_encoding('UTF-8'); 
   
   mysqli_set_charset($conn, "utf8");
+  
   ```
 
 * 使用ajax发送请求，PHP接收数据并返回
@@ -426,10 +431,12 @@ $emailhost = $email[1];
 
 dns_get_mx($emailhost,$mxhostsarr);
 foreach ($mxhostsarr as $key => $value) {
-	echo $key.'/'.$value;
-	# code...
+  echo $key.'/'.$value;
+  # code...
 }
+
 ```
+
 * 从FTP服务器下载最新版本文件脚本
 
   - (1).连接远程FTP服务器;
@@ -480,7 +487,7 @@ foreach ($mxhostsarr as $key => $value) {
     ftp_quit($conn);
     
 * 日期和时间
-  - time():时间戳;
+  - time():时间戳;
   - date("Y-m-d H:i:s",time()): 当前日期和时间;
   - mktime(): 将日期和时间转换成UNIX时间戳;
   - getdate():返回日期时间的数组;
