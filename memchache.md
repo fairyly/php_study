@@ -17,8 +17,7 @@ memcached 1.4.3
 
 在windows下注册为服务后运行：
 
-sc.exe create jb-Memcached binpath= “d:\App_Serv\memcached\memcached.exe -d RunService -p 11211 -m 500″ start= auto
-net start jb-Memcached
+sc.exe create jb-Memcached binpath= “d:\App_Serv\memcached\memcached.exe -d RunService -p 11211 -m 500″ start= auto net start jb-Memcached
 
 ```
 
