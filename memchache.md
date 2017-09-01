@@ -1,4 +1,6 @@
 ### 1、启动Memcache 常用参数
+
+```
 memcached 1.4.3
 -p <num>      设置端口号(默认不设置为: 11211)
 -U <num>      UDP监听端口 (默认: 11211, 0 时关闭)  
@@ -8,14 +10,23 @@ memcached 1.4.3
 -m <num>      允许最大内存用量，单位M (默认: 64 MB)
 -P <file>     将PID写入文件<file>，这样可以使得后边进行快速进程终止, 需要与 -d 一起使用
 如：
+
 在Linux下：./usr/local/bin/memcached -d -u jb-mc -l 192.168.1.197 -m 2048 -p 12121
+
 在window下：d:\App_Serv\memcached\memcached.exe -d RunService -l 127.0.0.1 -p 11211 -m 500
+
 在windows下注册为服务后运行：
+
 sc.exe create jb-Memcached binpath= “d:\App_Serv\memcached\memcached.exe -d RunService -p 11211 -m 500″ start= auto
 net start jb-Memcached
+
+```
+
 ### 2、telnet连接
 
+```
 telnet 127.0.0.1 11211
+```
 
 ### 3、写入memcache
 
@@ -49,6 +60,8 @@ quit	Terminate telnet session	quit
 
 #### 3.2 telnet请求命令格式
 
+```
+
 <command name> <key> <flags> <exptime> <bytes>\r\n <data block>\r\n
 a) <command name> 可以是”set”, “add”, “replace”。
 “set”表示按照相应的<key>存储该数据，没有的时候增加，有的覆盖。
@@ -72,8 +85,10 @@ f) 最后客户端需要加上”\r\n”作为”命令头”的结束标志。
 
 紧接着”命令头”结束之后就要发送数据块(即希望存储的数据内容),最后加上”\r\n”作为此次通讯的结束。
 
+```
 #### 3.3 telnet响应命令
 
+```
 结果响应：reply
 当以上数据发送结束之后,服务器将返回一个应答。可能有如下的情况:
 
@@ -84,7 +99,11 @@ b) “NOT_STORED\r\n” ： 表示存储失败,但是该失败不是由于错误
 如： set key 33 0 4\r\n
 ffff\r\n
 
+```
+
 ### 4、获取/检查KeyValue
+
+```
 get <key>*\r\n
 a) <key>* 表示一个或者多个key(以空格分开)
 b) “\r\n” 命令头的结束
@@ -108,14 +127,22 @@ VALUE aa 33 4
 ffff
 END
 
+```
+
 ### 5、删除KeyValue：
+
+```
 delete <key> <time>\r\n
 
 a) <key> 需要被删除数据的key
 b) <time> 客户端希望服务器将该数据删除的时间(unix时间或者从现在开始的秒数)
 c) “\r\n” 命令头的结束
 
+```
+
 ### 6、检查Memcache服务器状态：
+
+```
 stats\r\n
 在这里可以看到memcache的获取次数，当前连接数，写入次数，已经命中率等；
 
@@ -138,7 +165,11 @@ bytes_read ： 总共读取的流量字节数
 bytes_written ： 总的写入流量字节
 limit_maxbytes ： 最大允许使用的内存量，字节
 
+```
+
 ### 7、高级缓存细节查看方法：
+
+```
 stats reset
 清空统计数据
 
@@ -169,9 +200,19 @@ stats detail [on|off|dump]
 参数为off，关闭详细操作记录
 参数为dump，显示详细操作记录(每一个键值get、set、hit、del的次数)
 
+```
+
 ### 8、清空所有键值
+
+```
 flush_all
 注：flush并不会将items删除，只是将所有的items标记为expired，因此这时memcache依旧占用所有内存。
 
+```
+
 ### 9、退出
+
+```
 quit\r\n
+
+```
