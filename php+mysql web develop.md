@@ -534,6 +534,9 @@ foreach ($mxhostsarr as $key => $value) {
   imagedestroy($img);
   ```
 
+
+---------
+
 ## eval(),exit() or die();
 
 * eval("echo 'hello';"); 计算出php代码字符串的值;
