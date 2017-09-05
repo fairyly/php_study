@@ -284,7 +284,7 @@ $b->setName("john");
   
 ## 第二篇 MySQL
 
-  - 命令行登陆 : mysql -h 127.0.0.1 -u root -p
+  - 命令行登陆 : mysql -h 127.0.0.1 -u root -p
   - 使用数据库 : use databasename;
   - 开启服务 : net start mysql
   - 关闭服务 :  exit;  net stop mysql
