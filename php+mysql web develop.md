@@ -286,8 +286,8 @@ $b->setName("john");
 
   - 命令行登陆 : mysql -h 127.0.0.1 -u root -p
   - 使用数据库 : use databasename;
-  - 
-  
+  - 开启服务 : net start mysql
+  - 关闭服务 :  exit;  net stop mysql
   - ** 注意：进入MySQL中，每个命令执行都是以 ** `;` 结尾,不然不会执行;
   
   - create database web : 创建数据库命令
