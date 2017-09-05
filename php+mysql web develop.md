@@ -279,6 +279,7 @@ class Men extends PersonFace
 
 $b = new Men();
 $b->setName("john");
+
 ```
   
 ## 第二篇 MySQL
@@ -387,12 +388,11 @@ $b->setName("john");
   }
   $conn = null;
   
-  ```
-
-
+```
+  
 * 若显示中文或可以在数据库中插入中文数据，需设置
 
-  ```
+```
   header("Content-type: text/html; charset=utf-8");//设置编码，防止乱码
   mb_internal_encoding('UTF-8'); 
   mb_http_output('UTF-8'); 
@@ -401,13 +401,14 @@ $b->setName("john");
   
   mysqli_set_charset($conn, "utf8");
   
-  ```
+```
 
 * 使用ajax发送请求，PHP接收数据并返回
 
 ```
     $data = $_POST;
     echo json_encode($data);
+    
 ```
 
 * 解析 url 和 email MX记录
@@ -420,6 +421,7 @@ $b->setName("john");
     $u = parse_url($url);
     $host = $u['host'];
     $ip = gethostbyname($host);
+    
 ```
 
 ```
