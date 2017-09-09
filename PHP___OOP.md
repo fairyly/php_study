@@ -65,3 +65,24 @@ class Child extends Parent
 }
 
 ```
+
+
+## 接口
+
+接口中不能声明变量；
+
+```
+
+interface Test
+{
+  public function test($name);
+}
+
+class TestOne implements Test
+{
+  public function test()
+  {
+  }
+}
+
+```
