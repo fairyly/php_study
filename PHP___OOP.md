@@ -118,6 +118,10 @@ final class MyClass{//此类将不允许被继承
 
 ## 静态绑定
 
+在类的内部方法访问已经声明为const及static的属性时，需要使用self::$name的形式调用
+
+双冒号操作符即作用域限定操作符Scope Resolution Operator,可以访问静态、const和类中重写的属性与方法
+
 ```
 class A {
     public static function who() {
