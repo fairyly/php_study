@@ -108,6 +108,14 @@ class TestOne implements Test
 
 ```
 
+## final 最终的类和方法，不能继承，该关键字修饰的方法不能被重写
+
+```
+final class MyClass{//此类将不允许被继承  
+    final function fun1(){......}//此方法将不允许被重写  
+}  
+```
+
 ## 静态绑定
 
 ```
@@ -217,4 +225,5 @@ class administrator extends adminUser {
 $s = new administrator();
 print '-------------------';
 $s->show();
+
 ```
