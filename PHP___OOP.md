@@ -24,9 +24,22 @@ class Test
   {
     $this->name = $name;
   }
+  
+  function hello()
+  {
+    self::$name = "hello";
+  }
 }
 
-$test = new Test('')
+$test = new Test('john');
+
+class Child extends Parent
+{
+  public function test()
+  {
+  parent::$name = 'world';
+  }
+}
 
 ```
 
