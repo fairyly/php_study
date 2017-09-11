@@ -9,6 +9,7 @@
 class Test
 {
   public $name;
+  static $num = 0;
   
   function __construct($name)
   {
@@ -27,7 +28,7 @@ class Test
   
   function hello()
   {
-    self::$name = "hello";
+    self::$num++;// self:在类内部调用静态成员时使用
   }
 }
 
@@ -97,5 +98,27 @@ class TestOne implements Test
   {
   }
 }
+
+```
+
+## 静态绑定
+
+```
+class A {
+    public static function who() {
+        echo __CLASS__;
+    }
+    public static function test() {
+        self::who();
+    }
+}
+
+class B extends A {
+    public static function who() {
+        echo __CLASS__;
+    }
+}
+
+B::test();
 
 ```
