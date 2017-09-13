@@ -30,6 +30,29 @@
               |        ||        |
               '--------''--------'
 
+## yii网站常见问题：
+
+  1、数据表不完整；  
+  2、缓存，清空runtime下cache  
+  3、提示过期，清空memcahe 缓存；telnet 127.0.0.1 11211   flush_all  
+
+  4、经常404 ，memchache 未开启，找到memchache路径：  
+		在Linux下：./usr/local/bin/memcached -d -u jb-mc -l 192.168.1.197 -m 2048 -p 12121  
+
+		在window下： memcached.exe -d RunService -l 127.0.0.1 -p 11211 -m 500  
+
+
+  5、只有首页可以打开，内部其他页面打不开，没有设置 .htaccess文件  
+  
+  6、导入mysql文件方法
+    打开mysql命令行控制台，输入命令
+    
+    ```
+      use 数据库名
+      resouce sql文件路径
+    
+    ```
+
 
 ## 第一篇 PHP快速入门
 
