@@ -49,7 +49,7 @@
     
     ```
       use 数据库名
-      resouce sql文件路径
+      source sql文件路径
     
     ```
 
