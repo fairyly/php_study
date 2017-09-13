@@ -7,7 +7,7 @@
 ## 安装部署在本地服务器
 
 * 下载 Thinkphp 的稳定版本
-  - 可以去 Thinkphp 网站下载 http://www.thinkphp.cn/down.html;
+  - 可以去 Thinkphp 网站下载 http://www.thinkphp.cn/down.html;
   - Composer安装 在 Windows 中，你需要下载并运行  [Composer-Setup.exe](https://getcomposer.org/Composer-Setup.exe)
     然后在命令行下面，切换到你的web根目录下面并执行下面的命令：composer create-project topthink/think tp5  --prefer-dist
   - Git安装
@@ -19,6 +19,6 @@
       git pull https://github.com/top-think/framework
       
       在浏览器中输入地址： http://localhost/tp5/public/
-      如果浏览器输出 ThinkPHP V5,说明安装成功;  
+      如果浏览器输出 ThinkPHP V5,说明安装成功;  
       5.0的部署建议是public目录作为web目录访问内容，其它都是web目录之外  
     ```
