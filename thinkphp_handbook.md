@@ -38,7 +38,7 @@
 ## 创建目录控制器访问
 
 * 进入 application/index 下创建目录  model,/view
-  view 中创建 html 文件,index.html,head.html;
+  view/index 目录中创建 html 文件,index.html,head.html;
   
   ```
   //application/index/controller/Index.php 代码如下：
@@ -51,7 +51,7 @@
   {
     public function index()
     {
-        return  $this->display('index');
+        return  $this->display('index');//也可以使用fetch();
     }
 
     public function head()
@@ -62,6 +62,26 @@
   
   index.html 的访问地址：http://localhost/thinkphp/public/index
   head.html 的访问地址： http://localhost/thinkphp/public/index/Index/head
-  这个也就是手册上讲到的 “分层控制器”；
+  这个也可以理解成手册上讲到的 “分层控制器”；
+  
+  ```
+  
+* 在controller 中创建一个类 User.php,view/user 目录中创建index.html
+
+  ```
+  User.php 代码如下：
+  namespace app\index\controller;
+
+  use \think\Controller;
+
+  class User extends Controller
+  {
+    public function index()
+    {
+        return  $this->fetch('index');
+    }
+
+  }
+  user下index.html的访问地址 ：http://localhost/thinkphp/public/index/user/index
   
   ```
