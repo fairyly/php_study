@@ -34,3 +34,35 @@
     // 应用Trace
     'app_trace'              => true,
   ```
+
+## 创建目录控制器访问
+
+* 进入 application/index 下创建目录  model,/view
+  view 中创建 html 文件,index.html,head.html;
+  
+  ```
+  //application/index/controller/Index.php 代码如下：
+  <?php
+
+  namespace app\index\controller;
+
+  use \think\Controller;
+
+  class Index extends Controller
+  {
+    public function index()
+    {
+        return  $this->display('index');
+    }
+
+    public function head()
+    {
+        return  $this->display('head');
+    }
+  }
+  
+  index.html 的访问地址：http://localhost/thinkphp/public/index
+  head.html 的访问地址： http://localhost/thinkphp/public/index/Index/head
+  这个也就是手册上讲到的 “分层控制器”；
+  
+  ```
