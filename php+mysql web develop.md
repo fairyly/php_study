@@ -52,7 +52,12 @@
       source sql文件路径
     
     ```
-
+  7、一直显示错误日志
+  
+  ```
+  tail -f ./protected/runtime/application.log
+  
+  ```
 
 ## 第一篇 PHP快速入门
 
