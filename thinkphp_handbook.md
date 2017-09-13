@@ -51,9 +51,9 @@
   {
     public function index()
     {
-        return  $this->display('index');//也可以使用fetch();
+        return  $this->display('index');//也可以使用fetch();
     }
-
+    
     public function head()
     {
         return  $this->display('head');
@@ -62,14 +62,15 @@
   
   index.html 的访问地址：http://localhost/thinkphp/public/index
   head.html 的访问地址： http://localhost/thinkphp/public/index/Index/head
-  这个也可以理解成手册上讲到的 “分层控制器”；
+  这个也可以理解成手册上讲到的 “分层控制器”；
   
   ```
   
 * 在controller 中创建一个类 User.php,view/user 目录中创建index.html
 
   ```
-  User.php 代码如下：
+  User.php 代码如下：
+  
   namespace app\index\controller;
 
   use \think\Controller;
