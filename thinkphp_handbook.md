@@ -22,3 +22,15 @@
       如果浏览器输出 ThinkPHP V5,说明安装成功;  
       5.0的部署建议是public目录作为web目录访问内容，其它都是web目录之外  
     ```
+
+
+## 配置 application/config.php
+  
+  开启调试
+  
+  ```
+  // 应用调试模式
+    'app_debug'              => true,
+    // 应用Trace
+    'app_trace'              => true,
+  ```
