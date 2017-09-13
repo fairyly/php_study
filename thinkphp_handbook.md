@@ -41,9 +41,8 @@
   view 中创建 html 文件,index.html,head.html;
   
   ```
-  //application/index/controller/Index.php 代码如下：
-  <?php
-
+  //application/index/controller/Index.php 代码如下：
+  
   namespace app\index\controller;
 
   use \think\Controller;
@@ -61,8 +60,8 @@
     }
   }
   
-  index.html 的访问地址：http://localhost/thinkphp/public/index
-  head.html 的访问地址： http://localhost/thinkphp/public/index/Index/head
-  这个也就是手册上讲到的 “分层控制器”；
+  index.html 的访问地址：http://localhost/thinkphp/public/index
+  head.html 的访问地址： http://localhost/thinkphp/public/index/Index/head
+  这个也就是手册上讲到的 “分层控制器”；
   
   ```
