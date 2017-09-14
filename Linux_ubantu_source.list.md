@@ -98,3 +98,16 @@ deb http://security.ubuntu.com/ubuntu xenial-security multiverse
 保存退出。然后执行命令： #sudo apt-get update
 
 ```
+
+
+## Linux-ubantu16.04.2 虚拟机安装ngix步骤
+
+* 1.安装linux 系统ubantu16.04，记住版本号，换源时候用；
+* 2.换源步骤
+  - 切换目录到： cd /etc/apt/
+  - 新建文件： vim sources.list  并把需要换源的内容复制到文件中，
+  - 更新源： sudo apt-get update 更新源  
+  - 安装 nginx ：sudo apt-get install nginx   
+  - 查看 nginx 版本：/usr/sbin/nginx -v
+  - 查看 nginx 进程：ps -ef | grep nginx 命令ps查找nginx的主进程号，检查是否启动
+  - 查看 80 端口：netstat -antlp | grep 80     nginx占用80端口，检查是否启动
