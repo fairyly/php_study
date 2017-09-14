@@ -16,7 +16,7 @@ ifconfig   查看IP
 sudo是linux系统管理指令，是允许系统管理员让普通用户执行一些或者全部的root命令的一个工具;
 sudo -i
 
-su user 切换普通用户
+su username 切换普通用户
 sudo su 切换用户
 
 给root用户设定密码： 只需执行命令：sudo passwd 
