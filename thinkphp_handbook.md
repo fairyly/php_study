@@ -3,6 +3,7 @@
 * [thinkphp 自学手册地址](https://www.kancloud.cn/manual/thinkphp5/118003)
 * [Composer中文文档](https://www.kancloud.cn/thinkphp/composer/35668)
 * [h-ui.admin 后台模板](http://www.h-ui.net/H-ui.admin.shtml)
+* [Thinkphp视频教程](https://www.kancloud.cn/tpshop/thinkphp5/220686)
 
 
 ## 安装部署在本地服务器
