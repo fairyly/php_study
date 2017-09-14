@@ -83,6 +83,8 @@ mkdir：创建一个新的目录
 rmdir：删除一个空的目录
 cp: 复制文件或目录
 rm: 移除文件或目录
+mv fromfile tofile
+如把文件a.txt得命名为b.txt，可以是mv a.txt b.txt。
 
 cd是桌面,输入cd进入桌面目录，
 cd /home 重新进入用户主目录
