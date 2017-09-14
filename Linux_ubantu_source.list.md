@@ -9,6 +9,27 @@
 
 可以看到ubuntu数字版本号和英文名称的对应关系，也可以看到以04结尾的版本LTS标识，标识长期维护，这些版本的源在archive.ubuntu.com中呆的时间就比较长。
 
+第一步：备份原来的源文件
+```
+cd /etc/apt/  
+然后会显示下面的源文件sources.list 
+输入命令 
+sudo cp sources.list sources.list.bak 
+就是将sources.list备份到sources.list.bak
+```
+
+第二步：替换源
+  
+替换并保存 
+
+sudo gedit sources.list打开文件，替换成阿里云文件即可,也可以用vim sources.list;
+
+第三步：更新源和软件
+
+   sudo apt-get update 更新源  
+   
+   
+
 原有的source.list文件内容如下：
 
 ```
