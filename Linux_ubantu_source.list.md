@@ -2,6 +2,9 @@
 
 * [ubuntu发布的版本](https://wiki.ubuntu.com/Releases)
 * [ 清华大学开源软件镜像站](https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/)
+* [ubantu源列表](http://wiki.ubuntu.org.cn/%E6%BA%90%E5%88%97%E8%A1%A8)
+
+**一定要查看版本号**
 
 可以看到ubuntu数字版本号和英文名称的对应关系，也可以看到以04结尾的版本LTS标识，标识长期维护，这些版本的源在archive.ubuntu.com中呆的时间就比较长。
 
