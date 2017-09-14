@@ -28,7 +28,7 @@ sudo gedit sources.list打开文件，替换成阿里云文件即可,也可以�
 
    sudo apt-get update 更新源  
    
-   
+sudo apt-get install nginx  安装nginx   
 
 原有的source.list文件内容如下：
 
