@@ -3,6 +3,7 @@
 * [ubuntu发布的版本](https://wiki.ubuntu.com/Releases)
 * [ 清华大学开源软件镜像站](https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/)
 * [ubantu源列表](http://wiki.ubuntu.org.cn/%E6%BA%90%E5%88%97%E8%A1%A8)
+* [原始安装 Ubuntu16.04.1 安装Nginx](http://www.cnblogs.com/piscesLoveCc/p/5794926.html)
 
 **一定要查看版本号**
 
