@@ -82,7 +82,8 @@ pwd：显示目前的目录
 mkdir：创建一个新的目录
 rmdir：删除一个空的目录
 cp: 复制文件或目录
-rm: 移除文件或目录
+rm: 移除文件或目录 rm -rf
+find/whereis:查找目录
 mv fromfile tofile
 如把文件a.txt得命名为b.txt，可以是mv a.txt b.txt。
 
