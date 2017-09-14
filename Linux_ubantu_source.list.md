@@ -1,6 +1,7 @@
 # ubuntu有效的sourcelist配置
 
 * [ubuntu发布的版本](https://wiki.ubuntu.com/Releases)
+* [ 清华大学开源软件镜像站](https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/)
 
 可以看到ubuntu数字版本号和英文名称的对应关系，也可以看到以04结尾的版本LTS标识，标识长期维护，这些版本的源在archive.ubuntu.com中呆的时间就比较长。
 
@@ -68,6 +69,7 @@ deb http://security.ubuntu.com/ubuntu xenial-security multiverse
 使用：
 
 ```
-使用gedit将sources.list文件打开: sudo gedit /etc/apt/sources.list
+使用gedit将sources.list文件打开: #sudo gedit /etc/apt/sources.list
+保存退出。然后执行命令： #sudo apt-get update
 
 ```
