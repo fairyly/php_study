@@ -85,6 +85,8 @@ cp: 复制文件或目录
 rm: 移除文件或目录 rm -rf
 find/whereis:查找目录
 
+df -h :显示系统挂载的文件
+
 sudo chmod 777 修改权限
 
 mv fromfile tofile
