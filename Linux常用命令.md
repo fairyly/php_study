@@ -110,6 +110,11 @@ ls 查看根目录所有文件
     -> kill -9 3514 3515 3525     强制关闭nginx所有进程号
     -> kill -HUP 3514 平滑重启
 
+#启动nginx：
+sudo /usr/local/nginx/sbin/nginx -c /usr/local/nginx/conf/nginx.conf
+注意：-c 指定配置文件的路径，不加的话，nginx会自动加载默认路径的配置文件，可以通过 -h查看帮助命令。
+#查看nginx进程：
+ps -ef|grep nginx
 
 
  ps aux | grep apache  linux命令ps aux|grep xxx详解:要对进程进行监测和控制,首先必须要了解当前进程的情况,也就是需要查看当前进程
