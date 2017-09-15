@@ -14,8 +14,9 @@
   - 修改 config/web.php 文件，给 cookieValidationKey 配置项添加一个密钥（若你通过 Composer 安装，则此步骤会自动完成）：
   - // !!! 在下面插入一段密钥（若为空） - 以供 cookie validation 的需要
     ` 'cookieValidationKey' => '在此处输入你的密钥', `
-  - 安装完成后，就可以使用浏览器通过如下 URL 访问刚安装完的 Yii 应用了：
-    ```
+  - 安装完成后，就可以使用浏览器通过如下 URL 访问刚安装完的 Yii 应用了：http://localhost/basic/web/index.php
+  
+    ```
     当安装完成之后， 或配置你的Web服务器(看下面的文章)或使用内置Web Server， 当在项目 web 目录下可以通过下面的命令:
 
     php yii serve
