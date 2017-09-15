@@ -6,8 +6,10 @@
 
 # 下载和安装
 
-* [yii2 github 发布版本](https://github.com/yiisoft/yii2/releases) 可下载 basic 版本
+* [yii2 github 发布版本](https://github.com/yiisoft/yii2/releases) 要下载 basic 版本，如果完整和高级版中运行：php yii serve --port=8888,会提示   Could not open input file: yii;
+
 * [官网下载](http://www.yiiframework.com/download/)
+
 * 将下载的文件解压缩到 Web 目录中。
   - 修改 config/web.php 文件，给 cookieValidationKey 配置项添加一个密钥（若你通过 Composer 安装，则此步骤会自动完成）：
   - // !!! 在下面插入一段密钥（若为空） - 以供 cookie validation 的需要
