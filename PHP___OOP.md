@@ -3,8 +3,93 @@
 
 ## 类
 
+* php面向对象之private、protected、public三者权限控制区别
+
 ```
-文件名与类名相同
+class Human {
+    private $name = 'zhangsan';
+    protected $money = 3000;
+    public $age = 28;
+
+    public function say() {
+        echo '我叫',$this->name,'<br />';
+        echo '我有',$this->money,'元钱<br />';
+        echo '我今年',$this->age,'岁';
+    }
+}
+
+class Stu extends Human {
+    private $friend = '小花';
+
+    public function talk() {
+        echo '我叫',$this->name,'<br />';
+        echo '我有',$this->money,'元钱<br />';
+        echo '我今年',$this->age,'岁<br />';        
+    }
+}
+$ming = new Stu();
+echo $ming->age,'<br />'; // 28
+
+echo $ming->friend; //出错：因为类外不能调用private
+echo $ming->money; //出错：因为类外不能调用protected属性
+$ming->talk();
+/**
+出错：
+Notice: Undefined property: Stu::$name in 。。。
+我有3000元钱
+我今年28岁
+
+分析原因: Undefined property: Stu::$name 这是说明:stu对象 没有name属性
+但昨天说,私有的不是可以继承吗?
+是可以继承过来,但系统有标记,标记其为父类层面的私有属性.
+因此无权调用,导致此错发生.
+
+
+可以分析出:
+protected 可以在 子类内访问
+
+protected能在子类访问,本类内能否访问?
+答:当然可以
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   <?
+    //父类
+    class father{
+     public function a(){
+      echo "function a";
+     }
+     private function b(){
+      echo "function b";
+     }
+     protected function c(){
+      echo "function c";
+     }
+    }
+    //子类
+    class child extends father{
+      function d(){
+        parent::a();//调用父类的a方法
+      }
+      function e(){
+       parent::c(); //调用父类的c方法
+      }
+     function f(){
+        parent::b(); //调用父类的b方法
+      }
+    }
+    $father=new father();
+    $father->a();
+    $father->b(); //显示错误 外部无法调用私有的方法 Call to protected method father::b()
+    $father->c(); //显示错误 外部无法调用受保护的方法Call to private method father::c()
+    $chlid=new child();
+    $chlid->d();
+    $chlid->e();
+    $chlid->f();//显示错误 无法调用父类private的方法 Call to private method father::b()
+    ?>
+```
+* 文件名与类名相同
+```
+
 
 class Test
 {
