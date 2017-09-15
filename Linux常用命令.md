@@ -1,6 +1,6 @@
 # Linux常用命令
 
-
+* [Linux命令大全](https://github.com/fairyly/linux-command)
 
 
 ```
