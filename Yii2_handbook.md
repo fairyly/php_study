@@ -30,3 +30,9 @@
     http://localhost:8080/
     
     ```
+  - 你应该可以在浏览器中看到如上所示的 “Congratulations!” 页面。如果没有，请通过以下任意一种方式，检查当前 PHP 环境是否满足 Yii 最基本需求：
+    通过浏览器访问 URL http://localhost/basic/requirements.php
+    执行如下命令：
+    cd basic
+    php requirements.php
+    你需要配置好 PHP 安装环境，使其符合 Yii 的最小需求。主要是需要 PHP 5.4 以上版本。如果应用需要用到数据库，那还要安装 PDO PHP 扩展 和相应的数据     库驱动    （例如访问 MySQL 数据库所需的 pdo_mysql）。
