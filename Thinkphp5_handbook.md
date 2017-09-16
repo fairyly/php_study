@@ -1,10 +1,17 @@
 # thinkphp 自学手册
 
+```
+ThinkPHP5的环境要求如下：
+PHP >= 5.4.0
+PDO PHP Extension
+MBstring PHP Extension
+CURL PHP Extension
+```
+
 * [thinkphp 自学手册地址](https://www.kancloud.cn/manual/thinkphp5/118003)
 * [Composer中文文档](https://www.kancloud.cn/thinkphp/composer/35668)
 * [h-ui.admin 后台模板](http://www.h-ui.net/H-ui.admin.shtml)
 * [Thinkphp视频教程](https://www.kancloud.cn/tpshop/thinkphp5/220686)
-
 
 ## 安装部署在本地服务器
 
@@ -23,9 +30,12 @@
       在浏览器中输入地址： http://localhost/tp5/public/
       如果浏览器输出 ThinkPHP V5,说明安装成功;  
       5.0的部署建议是public目录作为web目录访问内容，其它都是web目录之外  
+      
+      注意: 如果本地使用的PHP版本比较低，如果是5.3,打开浏览器就会出现
+      Parse error: syntax error, unexpected '[' in E:\phpStudy\WWW\thinkphp5\thinkphp\library\think\Loader.php on line 18
+      
     ```
-
-
+    
 ## 配置 application/config.php
   
   开启调试
