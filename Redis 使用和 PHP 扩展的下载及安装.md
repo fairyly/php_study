@@ -28,3 +28,12 @@ Redis 安装
 
 * 下载 redis 和igbinary 扩展 地址：http://windows.php.net/downloads/pecl/releases/
 * 将 php_redis.dll 和 php_igbinary.dll 拷贝至 php 的 ext 目录下
+* 修改php.ini，在该文件中加入： 
+  ```
+  ; php_redis
+
+  extension=php_igbinary.dll
+
+  extension=php_redis.dll
+  ```
+* 打开 PHPinfo 查看安装是否完成；
