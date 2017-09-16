@@ -1,3 +1,19 @@
+# memcache 安装
+
+* [memcache 扩展下载](http://windows.php.net/downloads/pecl/releases/memcache/3.0.8/)
+* 将 memcache 拷贝至 php 的 ext 目录下
+* 修改 PHP 配置文件 php.ini, 把
+  文件扩展 extensions 中加入：
+  ```
+  ; php_redis
+
+  extension=php_igbinary.dll
+
+  extension=php_redis.dll
+  ```
+* 打开 PHPinfo 查看安装是否完成；
+
+
 ### 1、启动Memcache 常用参数
 
 ```
