@@ -6,10 +6,8 @@
   文件扩展 extensions 中加入：
   ```
   ; php_memcache
-
   extension=php_memcache.dll
 
-  
   ```
 * 打开 PHPinfo 查看安装是否完成；
 
