@@ -5,11 +5,11 @@
 * 修改 PHP 配置文件 php.ini, 把
   文件扩展 extensions 中加入：
   ```
-  ; php_redis
+  ; php_memcache
 
-  extension=php_igbinary.dll
+  extension=php_memcache.dll
 
-  extension=php_redis.dll
+  
   ```
 * 打开 PHPinfo 查看安装是否完成；
 
