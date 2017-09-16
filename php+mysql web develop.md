@@ -30,6 +30,11 @@
               |        ||        |
               '--------''--------'
 
+## php
+
+* [windows 扩展](https://pecl.php.net/package/redis/2.2.7/windows)
+* [php 官网](https://secure.php.net/)
+
 ## yii网站常见问题：
 
   1、数据表不完整；  
