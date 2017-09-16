@@ -1,6 +1,8 @@
 Window 下安装
 下载地址：https://github.com/dmajkic/redis/downloads。
 
+* [redis 扩展下载地址](http://windows.php.net/downloads/pecl/releases/redis/)
+
 下载到的Redis支持32bit和64bit。根据自己实际情况选择，将64bit的内容cp到自定义盘符安装目录取名redis。 如 C:\reids
 
 打开一个cmd窗口 使用cd命令切换目录到 C:\redis 运行 redis-server.exe redis.conf 。
