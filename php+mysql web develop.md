@@ -32,7 +32,8 @@
 
 ## php
 
-* [windows php扩展下载官网](https://pecl.php.net/package/redis/2.2.7/windows)
+* [windows php扩展官网](https://pecl.php.net/package/redis/2.2.7/windows)
+* [官网下载的扩展网址](http://windows.php.net/downloads/pecl/releases/要下载的扩展名/)
 * [php 官网](https://secure.php.net/)
 
 ## yii网站常见问题：
