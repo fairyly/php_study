@@ -37,3 +37,18 @@ Redis 安装
   extension=php_redis.dll
   ```
 * 打开 PHPinfo 查看安装是否完成；
+
+* 开启自启动 redis 方法
+
+```
+新建 start.bat，写入内容
+D:
+D:\dev\redis-2.4.5
+redis-server.exe redis.conf
+
+新建 redis.vbs，写入内容
+
+createobject("wscript.shell").run "D:\dev\redis-2.4.5\start.bat",0
+之后，把 start.bat 放在redis-2.4.5目录下，把redis.vbs放在启动目录下
+
+```
