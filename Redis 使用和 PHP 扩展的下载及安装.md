@@ -52,3 +52,9 @@ createobject("wscript.shell").run "D:\dev\redis-2.4.5\start.bat",0
 之后，把 start.bat 放在redis-2.4.5目录下，把redis.vbs放在启动目录下
 
 ```
+
+* 清空 redis 缓存
+
+```
+redis-cli flushall
+```
