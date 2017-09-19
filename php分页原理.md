@@ -143,32 +143,35 @@ include_once('./action/booklist.php');
          <table>
              
             <?php
-            
-                    if ($page <= 1) {
-                        $pagepre = 1;
-                    }else {
-                        $pagepre = intval($page) - 1;
-                    }
-                    
-                    $sels = $conn->prepare($pagesql);
-                    $rss = $sels->execute();
-               
-                    // var_dump($sels->fetchAll(PDO::FETCH_ASSOC));//exit;
-                    $sels = $sels->fetchAll(PDO::FETCH_ASSOC);
-                    foreach ($sels as $key => $value) {
-                        echo "<tr>";
-                        echo "<td>".$value['id']."</td>";
-                        echo "<td>".$value['isbn']."</td>";
-                        echo "<td>".$value['author']."</td>";
-                        echo "<td>".$value['title']."</td>";
-                        echo "<td>".$value['catid']."</td>";
-                        echo "<td>".$value['price']."</td>";
-                        echo "<td>".$value['description']."</td>";
-                        echo "</tr>";
-                    }    
+                
+                $sels = $conn->prepare($pagesql);
+                $rss = $sels->execute();
+           
+                // var_dump($sels->fetchAll(PDO::FETCH_ASSOC));//exit;
+                $sels = $sels->fetchAll(PDO::FETCH_ASSOC);
+                foreach ($sels as $key => $value) {
+                    echo "<tr>";
+                    echo "<td>".$value['id']."</td>";
+                    echo "<td>".$value['isbn']."</td>";
+                    echo "<td>".$value['author']."</td>";
+                    echo "<td>".$value['title']."</td>";
+                    echo "<td>".$value['catid']."</td>";
+                    echo "<td>".$value['price']."</td>";
+                    echo "<td>".$value['description']."</td>";
+                    echo "<td><a href='modify.php?id=".$value['id']."'>修改</a></td>";
+                    echo "<td><a href='del.php?id=".$value['id']."'>删除</a></td>";
+                    echo "</tr>";
+                }
             ?>
             <td width="40px"><a href="book.php?page=1">首页</a></td>        
-              <td width="45px"><a href="book.php?page= <?php echo $pagepre?>">上一页</a></td>
+              <td width="45px"><a href="book.php?page=<?php 
+                if ($page <= 1) {
+                    echo 1;
+                }else {
+                    echo intval($page) - 1;
+                }
+
+              ?>">上一页</a></td>
               
               <td width="45px"><a href="book.php?page=<?php 
               if($page == $pagecount){
