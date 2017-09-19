@@ -1,4 +1,4 @@
-# php和mysql web开发第四版
+# php 和 mysql web 开发第四版
 
 
                   ,--.    ,--.
@@ -38,26 +38,26 @@
 
 **注意：安装扩展要查看 PHPinfo 中的{Compiler，PHP Extension 版本，PHP Extension Build 版本等}**
 
-## yii网站常见问题：
+## yii 网站常见问题：
 
   1、数据表不完整；  
-  2、缓存，清空runtime下cache  
-  3、提示过期，清空memcahe 缓存；telnet 127.0.0.1 11211   flush_all  
+  2、缓存，清空 runtime 下 cache  
+  3、提示过期，清空 memcahe 缓存；telnet 127.0.0.1 11211   flush_all  
 
-  4、经常404 ，memchache 未开启，找到memchache路径：  
-		在Linux下：./usr/local/bin/memcached -d -u jb-mc -l 192.168.1.197 -m 2048 -p 12121  
+  4、经常 404 ，memchache 未开启，找到 memchache 路径：  
+		在 Linux 下：./usr/local/bin/memcached -d -u jb-mc -l 192.168.1.197 -m 2048 -p 12121  
 
-		在window下： memcached.exe -d RunService -l 127.0.0.1 -p 11211 -m 500  
+		在 window 下： memcached.exe -d RunService -l 127.0.0.1 -p 11211 -m 500  
 
 
-  5、只有首页可以打开，内部其他页面打不开，没有设置 .htaccess文件  
+  5、只有首页可以打开，内部其他页面打不开，没有设置 .htaccess 文件  
   
-  6、导入mysql文件方法
-    打开mysql命令行控制台，输入命令
+  6、导入 mysql 文件方法
+    打开 mysql 命令行控制台，输入命令
     
   ```
       use 数据库名
-      source sql文件路径
+      source sql 文件路径
     
   ```
   7、一直显示错误日志
@@ -67,16 +67,16 @@
   
   ```
 
-## 第一篇 PHP快速入门
+## 第一篇 PHP 快速入门
 
-- PHP代码 必须 使用 `<?php ?>` 长标签 或 `<?= ?>` 短输出标签;
+- PHP 代码 必须 使用 `<?php ?>` 长标签 或 `<?= ?>` 短输出标签;
 
 - 常量: 全部用大写字母,单词间用下划线分隔;
 - 变量：一般小写;
-- PHP所有 关键字 必须 全部小写;
+- PHP 所有 关键字 必须 全部小写;
 - 常量 true 、false 和 null 也 必须 全部小写;
-- 所有PHP文件 必须 以一个空白行作为结束;
-- 纯PHP代码文件 必须 省略最后的 ?> 结束标签;
+- 所有 PHP 文件 必须 以一个空白行作为结束;
+- 纯 PHP 代码文件 必须 省略最后的 ?> 结束标签;
 
 - namespace 声明后 必须 插入一个空白行。  
   所有 use 必须 在 namespace 后声明。  
@@ -84,7 +84,7 @@
   use 声明语句块后 必须 要有一个空白行。
   ```
   <?php
-  // PHP 5.3及以后版本的写法
+  // PHP 5.3 及以后版本的写法
   namespace Vendor\Model;
 
   class Foo
@@ -324,7 +324,7 @@ $b->setName("john");
   - 使用数据库 : use databasename;
   - 开启服务 : net start mysql
   - 关闭服务 :  exit;  net stop mysql
-  - ** 注意：进入MySQL中，每个命令执行都是以 ** `;` 结尾,不然不会执行;
+  - ** 注意：进入 MySQL 中，每个命令执行都是以 ** `;` 结尾,不然不会执行;
   
   - create database web : 创建数据库命令
   - drop database web : 删除数据库;
@@ -343,7 +343,7 @@ $b->setName("john");
   - 查看特定表详细信息 : describe books;
   - 创建索引 : create index indexname on tablename;
   - 插入数据 : insert into tablename values ('');
-  - 自增id数据插入 : $query = "insert into customers values (NULL,'".$name."','".$address."','".$city."')";
+  - 自增 id 数据插入 : $query = "insert into customers values (NULL,'".$name."','".$address."','".$city."')";
   - 更新数据 : update tabalename set bookprice = bookprice+1.5 [where bookid=115];
   - 删除数据 : delete from tablename where bookid=12;
   
@@ -365,7 +365,7 @@ $b->setName("john");
   $res->free();//释放结果集
   $db->close();//关闭连接
   
-  //PDO方式
+  //PDO 方式
   try{
     $host = 'localhost';
     $user ='root';
@@ -376,7 +376,7 @@ $b->setName("john");
     @ $conn = new PDO($dns,$user,$pass);
     
     $obj ->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);//设置以异常的形式报错
-    $obj ->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE , PDO::FETCH_ASSOC );//设置fetch时返回数据形式为数组
+    $obj ->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE , PDO::FETCH_ASSOC );//设置 fetch 时返回数据形式为数组
     
     $query = "insert into customers values (NULL,'".$name."','".$address."','".$city."','11','ads','123')"; //插入id自增数据
     $ps = $conn->prepare($query);
@@ -439,7 +439,7 @@ $b->setName("john");
   
 ```
 
-* 使用ajax发送请求，PHP接收数据并返回
+* 使用 ajax 发送请求，PHP 接收数据并返回
 
 ```
     $data = $_POST;
@@ -450,7 +450,7 @@ $b->setName("john");
 * 解析 url 和 email MX记录
 
   - parse_url — 解析 URL，返回其组成部分
-  - gethostbyname($host) :获得该url主机的IP地址，如果存在返回IP，不存在返回false;
+  - gethostbyname($host) :获得该 url 主机的 IP 地址，如果存在返回 IP，不存在返回 false;
   
 ```
     $url = "http://www.baidu.com";
@@ -475,13 +475,13 @@ foreach ($mxhostsarr as $key => $value) {
 
 ```
 
-* 从FTP服务器下载最新版本文件脚本
+* 从 FTP 服务器下载最新版本文件脚本
 
-  - (1).连接远程FTP服务器;
+  - (1).连接远程 FTP 服务器;
   
     $conn = ftp_connect($host);
     
-  - (2).登录FTP服务器;
+  - (2).登录 FTP 服务器;
   
     $result = @ftp_login($host,$user,$pass);
     
@@ -520,14 +520,14 @@ foreach ($mxhostsarr as $key => $value) {
     // close the connection  
     ftp_close($conn_id);  
 
-  - (5).关闭FTP连接;
+  - (5).关闭 FTP 连接;
   
     ftp_quit($conn);
     
 * 日期和时间
   - time():时间戳;
   - date("Y-m-d H:i:s",time()): 当前日期和时间;
-  - mktime(): 将日期和时间转换成UNIX时间戳;
+  - mktime(): 将日期和时间转换成 UNIX 时间戳;
   - getdate():返回日期时间的数组;
   - checkdate():检查日期的有效性;
   - strftime('%c'): 格式化时间戳;
@@ -588,17 +588,49 @@ foreach ($mxhostsarr as $key => $value) {
 * exit; 终止执行; 或者---exit("提示信息");
 * die; 终止执行,  或者---die("提示信息");
 
-## 两种方法清空memcache缓存
+## 两种方法清空 memcache 缓存
 
 ```
-默认memcache会监听11221端口，如果想清空服务器上memecache的缓存，大家一般使用的是：
+默认 memcache 会监听 11221 端口，如果想清空服务器上 memecache 的缓存，大家一般使用的是：
 telnet localhost 11211
 flush_all
 
 同样也可以使用：
 echo "flush_all" | nc localhost 11211
 
-使用flush_all 后并不是删除memcache上的key，而是置为过期
+使用 flush_all 后并不是删除 memcache 上的 key，而是置为过期
 ```
 
+## 使用 PHP 发送网络请求
 
+```
+$image="images/r1.jpg";
+    $fp = fopen($image, 'rb');
+    $content = fread($fp, filesize($image)); //二进制数据
+    $curl = curl_init();
+    
+    curl_setopt_array($curl, array(
+                                   CURLOPT_URL => "https://api-cn.faceplusplus.com/facepp/v3/detect",
+                                   CURLOPT_RETURNTRANSFER => true,
+                                   CURLOPT_ENCODING => "",
+                                   CURLOPT_MAXREDIRS => 10,
+                                   CURLOPT_TIMEOUT => 30,
+                                   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                                   CURLOPT_CUSTOMREQUEST => "POST",
+                                   CURLOPT_POSTFIELDS => array('image";filename="image'=>"$content", 'api_key'=>"9umCYpVA66zSsdktimDeWQt55NNuFdVl",'api_secret'=>"xdLDu2HP6UUyPBeyW__4xCe0ef4uqY0k"),
+                                   CURLOPT_HTTPHEADER => array(
+                                                               "cache-control: no-cache",
+                                                               ),
+                                   ));
+    
+    $response = curl_exec($curl);
+    $err = curl_error($curl);
+    
+    curl_close($curl);
+    
+    if ($err) {
+        echo "cURL Error #:" . $err;
+    } else {
+        echo $response;
+    }
+```
