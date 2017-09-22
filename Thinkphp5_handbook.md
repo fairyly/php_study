@@ -225,6 +225,8 @@ class Tools extends controller
 
 ## 导出Excel
 
+http://www.jianshu.com/p/6684cfb61a99
+
 ```
 namespace app\index\controller;
 
