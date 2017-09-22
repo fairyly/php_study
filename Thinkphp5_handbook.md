@@ -102,7 +102,9 @@ CURL PHP Extension
 
 # 使用 include 包含文件加入公共头和公共尾
 
-在 view/index 目录中新建 head.html 和 foot.html, index.html中加入下面代码即可；
+* 参考 https://www.kancloud.cn/manual/thinkphp5/125009
+
+在 view/index 目录中新建 head.html 和 foot.html, index.html 中加入下面代码即可；
 
 ```
 {include file="index/head" /}
@@ -114,6 +116,8 @@ CURL PHP Extension
 ```
 
 # 页面中链接的写法 
+
+* 参考 https://www.kancloud.cn/manual/thinkphp5/118041
 
 ```
 <div>hello <a href="{:Url('index/index')}">tesr</a></div>
