@@ -293,3 +293,37 @@ class Tools extends controller
 $this->redirect('http://thinkphp.cn');
 
 
+# 数据库 CURD
+
+注意： **ThinkPHP 5.0查询构造器使用 PDO参数绑定，以保护应用程序免于 SQL注入，因此传入的参数不需额外转义特殊字符。**
+
+```
+// 插入记录
+Db::table('think_data')
+    ->insert(['id' => 18, 'name' => 'thinkphp', 'status' => 1]);
+
+// 更新记录
+Db::table('think_data')
+    ->where('id', 18)
+    ->update(['name' => "hello"]);
+
+// 查询数据
+$list = Db::table('think_data')
+    ->where('id', 18)
+    ->select();
+
+// 删除数据
+Db::table('think_data')
+    ->where('id', 18)
+    ->delete();
+```
+注意：**由于需要用到事务的功能，请先修改数据表的类型为InnoDB，而不是MyISAM。**
+
+```
+Db::transaction(function () {
+    Db::table('think_user')
+        ->delete(1);
+    Db::table('think_data')
+        ->insert(['id' => 28, 'name' => 'thinkphp', 'status' => 1]);
+});
+```
