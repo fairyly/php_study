@@ -132,4 +132,18 @@ CURL PHP Extension
 ```
 var_dump($_SERVER);
 !$_SERVER['HTTP_REFERER'] or die('forbidden!'); 
+
+if (!isset($_SERVER['HTTP_REFERER'])) {
+    # code...
+    die('forbidden!');
+}
+```
+
+# 获取客户端IP的方法
+
+引入 use \think\Request;
+
+```
+$request = Request::instance();
+echo '访问ip地址：' . $request->ip();
 ```
