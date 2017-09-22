@@ -1,4 +1,4 @@
-# thinkphp 自学手册
+# thinkphp5 自学手册
 
 ```
 ThinkPHP5的环境要求如下：
