@@ -98,3 +98,17 @@ CURL PHP Extension
   user下index.html的访问地址 ：http://localhost/thinkphp/public/index/user/index
   
   ```
+
+
+# 使用 include 包含文件加入公共头和公共尾
+
+在 view/index 目录中新建 head.html 和 foot.html, index.html中加入下面代码即可；
+
+```
+{include file="index/head" /}
+
+<div>hello </div>
+
+{include file="index/foot" /}
+
+```
