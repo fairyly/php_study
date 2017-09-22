@@ -3,6 +3,7 @@
 下载地址：https://github.com/dmajkic/redis/downloads
 
 * [redis 扩展下载地址](http://windows.php.net/downloads/pecl/releases/redis/) 
+* [Redis 中文文档](https://wizardforcel.gitbooks.io/redis-doc/content/)
 
 **注意：安装扩展要查看 PHPinfo 中的{Compiler，PHP Extension 版本，PHP Extension Build 版本等}**
 
