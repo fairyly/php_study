@@ -18,6 +18,7 @@ CURL PHP Extension
 * [ThinkPhP5.0.10-增删改查-API接口开发-源码下载-在线演示-Layer-新手入门](https://www.kancloud.cn/q113211/xinshou/383616)
 * [ThinkPHP5从入门到努力之入门实践](https://www.kancloud.cn/liuzhen153/tp5-demo/259697)
 * [ThinkPHP5快速入门](https://www.kancloud.cn/thinkphp/thinkphp5_quickstart/147278)
+* [Thinkphp5工具箱](https://www.kancloud.cn/phper123/tools/289760)
 
 ## 安装部署在本地服务器
 
