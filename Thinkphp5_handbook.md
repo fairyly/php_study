@@ -126,3 +126,10 @@ CURL PHP Extension
 <p><a href="{url::build('index/index/index');}">index</a></p>
 <p><a href="{:url('index/index/add');}">add</a></p>
 ```
+
+# 阻止直接打开页面访问
+
+```
+var_dump($_SERVER);
+!$_SERVER['HTTP_REFERER'] or die('forbidden!'); 
+```
