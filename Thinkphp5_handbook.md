@@ -290,7 +290,19 @@ class Tools extends controller
 
 # 页面重定向
 
+系统的\think\Controller类内置了两个跳转方法success和error，用于页面跳转提示。
+
 $this->redirect('http://thinkphp.cn');
+
+```
+if($result){
+    //设置成功后跳转页面的地址，默认的返回页面是$_SERVER['HTTP_REFERER']
+    $this->success('新增成功', 'User/list');
+} else {
+    //错误页面的默认跳转页面是返回前一页，通常不需要设置
+    $this->error('新增失败');
+}
+```
 
 
 # 数据库 CURD
