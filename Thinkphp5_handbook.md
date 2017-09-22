@@ -154,3 +154,70 @@ if (!isset($_SERVER['HTTP_REFERER'])) {
 $request = Request::instance();
 echo '访问ip地址：' . $request->ip();
 ```
+
+# 通过phpexcel导入数据
+
+我们经常会在系统中用到excel导入的功能。运营人员将需要的数据，写在excel中，直接导入系统。比他们在 后台中一个一个的添加要方便快捷。phpexcel 是php操作excel的神奇，可以进行excel的生成以及解析。这里我不讲 利用 phpexcel 生成 excel,因为这个类在生成大的 excel 时效率非常的低，还容易导致失败。所以大的数据导出，建议导出成 csv 格式。
+
+thinkphp5 集成 phpexcel
+依旧是到 packagist 的官网 https://packagist.org ，搜索 phpexcel，复制安装语句。打开 cmd ，进入项目根目录
+composer require phpoffice/phpexcel
+
+
+应用phpexcel导入excel
+控制器方面，我们在 Tools.php 中新建 excel
+namespace app\index\controller;
+
+use \think\Controller;
+
+class Tools extends controller
+{
+
+	// 导入excel
+	public function excel()
+	{
+		if(request()->isPost()){
+			
+		}
+		
+		return $this->fetch();
+	}
+}
+然后我们来新建一个页面，添加一个 上传按钮，让用户可以上传excel，新建 application\index\view\tools\excel.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>上传excel</title>
+</head>
+<body>
+<form action="{:url('tools/excel')}" method="post" enctype="multipart/form-data">
+	<input type="file" name="excel" />
+	<input type="submit" value="提交"/>
+</form>
+</body>
+</html>
+访问 http://www.phper.com/index/tools/excel 一个最简易的 页面，不要介意啊。我们主要看功能。
+
+
+下面，我们整理一个excel，将他上传，交给 excel 这个函数来处理。我在本地新建了一个 text.xlsx
+
+
+这样就可以上传了，让我们来看看，如何获取这个excel中的内容。
+
+	// 导入excel
+	public function excel()
+	{
+		if(request()->isPost()){
+			
+			$excel = request()->file('excel')->getInfo();
+			$objPHPExcel = \PHPExcel_IOFactory::load($excel['tmp_name']);//读取上传的文件
+			$arrExcel = $objPHPExcel->getSheet(0)->toArray();//获取其中的数据
+			
+			print_r($arrExcel);die;
+		}
+		
+		return $this->fetch();
+	}
+提交excel会得到如下的数组
