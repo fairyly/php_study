@@ -12,6 +12,10 @@ CURL PHP Extension
 * [Composer中文文档](https://www.kancloud.cn/thinkphp/composer/35668)
 * [h-ui.admin 后台模板](http://www.h-ui.net/H-ui.admin.shtml)
 * [Thinkphp视频教程](https://www.kancloud.cn/tpshop/thinkphp5/220686)
+* [基于thinkphp5小功能设计与实现](https://www.kancloud.cn/zhiqiang/helper/247201)
+* [ThinkPHP5数据库实例详解](https://www.kancloud.cn/ldkt/tp5_db/224479)
+* [ThinkPHP5模型实例详解](https://www.kancloud.cn/ldkt/tp5_model/237252)
+* [ThinkPhP5.0.10-增删改查-API接口开发-源码下载-在线演示-Layer-新手入门](https://www.kancloud.cn/q113211/xinshou/383616)
 
 ## 安装部署在本地服务器
 
