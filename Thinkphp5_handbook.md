@@ -19,6 +19,7 @@ CURL PHP Extension
 * [ThinkPHP5从入门到努力之入门实践](https://www.kancloud.cn/liuzhen153/tp5-demo/259697)
 * [ThinkPHP5快速入门](https://www.kancloud.cn/thinkphp/thinkphp5_quickstart/147278)
 * [Thinkphp5工具箱](https://www.kancloud.cn/phper123/tools/289760)
+* [挑战者笔记](https://www.kancloud.cn/weber_lzw/book/208026)
 
 ## 安装部署在本地服务器
 
@@ -221,3 +222,74 @@ class Tools extends controller
 		return $this->fetch();
 	}
 提交excel会得到如下的数组
+
+## 导出Excel
+
+```
+namespace app\index\controller;
+
+use \think\Controller;
+use \think\Db;
+
+use PHPExcel_IOFactory;
+use PHPExcel;
+
+class Tools extends controller
+{
+
+    public function index()
+    {
+        return $this->fetch();
+    }
+
+    public function excel()
+    {
+        // var_dump(dirname(__FILE__));
+        // if(request()->isPost()){
+            
+        //     $excel = request()->file('excel')->getInfo();
+        //     $objPHPExcel = \PHPExcel_IOFactory::load($excel['tmp_name']);//读取上传的文件
+        //     $arrExcel = $objPHPExcel->getSheet(0)->toArray();//获取其中的数据
+            
+        //     print_r($arrExcel);die;
+        // }
+
+        $sql = Db::table('think_users')->select();
+        
+        $objPHPExcel = new PHPExcel();
+
+        $objPHPExcel->setActiveSheetIndex(0)
+            ->setCellValue('A1', 'ID编号')
+            ->setCellValue('B1', '用户名')
+            ->setCellValue('C1', '密码');
+
+        $i=2;  //定义一个i变量，目的是在循环输出数据是控制行数
+        $count = count($sql);  //计算有多少条数据
+        for ($i = 2; $i <= $count+1; $i++) {
+            $objPHPExcel->getActiveSheet()->setCellValue('A' . $i, $sql[$i-2]['id']);
+            $objPHPExcel->getActiveSheet()->setCellValue('B' . $i, $sql[$i-2]['uname']);
+            $objPHPExcel->getActiveSheet()->setCellValue('C' . $i, $sql[$i-2]['upass']);
+
+
+        }
+
+        $objPHPExcel->getActiveSheet()->setTitle('user');      //设置sheet的名称
+        $objPHPExcel->setActiveSheetIndex(0);                   //设置sheet的起始位置
+        $objWriter = \PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');   //通过PHPExcel_IOFactory的写函数将上面数据写出来
+        $PHPWriter = \PHPExcel_IOFactory::createWriter( $objPHPExcel,"Excel2007");
+        header('Content-Disposition: attachment;filename="用户信息.xlsx"');
+        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        $PHPWriter->save("php://output"); //表示在$path路径下面生成demo.xlsx文件
+
+
+        return $this->fetch();
+    }
+}
+```
+
+
+# 页面重定向
+
+$this->redirect('http://thinkphp.cn');
+
+
