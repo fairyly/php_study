@@ -158,6 +158,8 @@ echo '访问ip地址：' . $request->ip();
 
 # 通过phpexcel导入数据
 
+phpexcel说明文档：https://github.com/PHPOffice/PHPExcel
+
 我们经常会在系统中用到excel导入的功能。运营人员将需要的数据，写在excel中，直接导入系统。比他们在 后台中一个一个的添加要方便快捷。phpexcel 是php操作excel的神奇，可以进行excel的生成以及解析。这里我不讲 利用 phpexcel 生成 excel,因为这个类在生成大的 excel 时效率非常的低，还容易导致失败。所以大的数据导出，建议导出成 csv 格式。
 
 thinkphp5 集成 phpexcel
