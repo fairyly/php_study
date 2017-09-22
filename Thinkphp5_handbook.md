@@ -112,3 +112,13 @@ CURL PHP Extension
 {include file="index/foot" /}
 
 ```
+
+# 页面中链接的写法 
+
+```
+<div>hello <a href="{:Url('index/index')}">tesr</a></div>
+
+两种用法：
+<p><a href="{url::build('index/index/index');}">index</a></p>
+<p><a href="{:url('index/index/add');}">add</a></p>
+```
