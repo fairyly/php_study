@@ -16,6 +16,7 @@ CURL PHP Extension
 * [ThinkPHP5数据库实例详解](https://www.kancloud.cn/ldkt/tp5_db/224479)
 * [ThinkPHP5模型实例详解](https://www.kancloud.cn/ldkt/tp5_model/237252)
 * [ThinkPhP5.0.10-增删改查-API接口开发-源码下载-在线演示-Layer-新手入门](https://www.kancloud.cn/q113211/xinshou/383616)
+* [ThinkPHP5从入门到努力之入门实践](https://www.kancloud.cn/liuzhen153/tp5-demo/259697)
 
 ## 安装部署在本地服务器
 
