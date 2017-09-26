@@ -35,6 +35,8 @@
 header("Access-Control-Allow-Origin: *");
 header('Access-Control-Allow-Headers: token, Content-Type');
 header('Access-Control-Allow-Methods: GET, POST, DELETE, PUT, PATCH, OPTIONS');
+header("Location: http://www.example.com/");
+header("Content-type: text/html; charset=UTF-8");
 
 * [windows php 扩展官网](https://pecl.php.net/package/redis/2.2.7/windows)
 * [官网下载的扩展网址](http://windows.php.net/downloads/pecl/releases/要下载的扩展名/)
