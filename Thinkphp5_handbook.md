@@ -147,6 +147,28 @@ if (!isset($_SERVER['HTTP_REFERER'])) {
 }
 ```
 
+# 我的路由配置 route.php
+
+```
+return [
+    '__pattern__' => [
+        'name' => '\w+',
+    ],
+    '[hello]'     => [
+        ':id'   => ['index/hello', ['method' => 'get'], ['id' => '\d+']],
+        ':name' => ['index/hello', ['method' => 'post']],
+    ],
+    
+    'about' => 'index.php/index/index/about',
+    'ourinfo' => 'index.php/index/index/ourinfo',
+    'usercenter' => 'index.php/index/index/usercenter',
+    'login' => 'index.php/index/index/login',
+    'register' => 'index.php/index/index/register',
+];
+
+配置好以后可以直接访问 http://localhost:8089/index.php/about
+```
+
 # 获取客户端IP的方法
 
 引入 use \think\Request;
