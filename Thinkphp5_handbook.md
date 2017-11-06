@@ -369,7 +369,7 @@ Db::transaction(function () {
 
 
 ## 微信支付
-  * sdk demo: https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=11_1
+  * sdk demo: https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=11_1
   * thinkphp整合系列之微信扫码支付:https://baijunyao.com/article/77
   * PHP实现微信支付(jsapi支付)和退款(无需集成支付SDK):http://blog.csdn.net/sinat_35861727/article/details/77737400
   * 
