@@ -371,5 +371,8 @@ Db::transaction(function () {
 ## 微信支付
   * sdk demo: https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=11_1
   * thinkphp整合系列之微信扫码支付:https://baijunyao.com/article/77
+  * 微信公众号获取用户的openid：http://blog.csdn.net/sinat_35861727/article/details/77776852
   * PHP实现微信支付(jsapi支付)和退款(无需集成支付SDK):http://blog.csdn.net/sinat_35861727/article/details/77737400
-  * 
+  * thinkphp整合系列之微信公众号支付：https://baijunyao.com/article/78
+    实例项目：https://github.com/baijunyao/thinkphp-bjyadmin
+  * 
