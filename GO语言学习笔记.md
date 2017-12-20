@@ -2,7 +2,7 @@
 
 * [Go 学习笔记](https://www.kancloud.cn/xiao_ma_yi/golang/343461)
 * [XORM操作指南](https://www.kancloud.cn/kancloud/xorm-manual-zh-cn/56013)
-* []()
+* [go 编程基础](https://github.com/Unknwon/go-fundamental-programming)
 
 # Go
 
