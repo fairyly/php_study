@@ -2,6 +2,9 @@
 
 * [Linux命令大全](https://github.com/fairyly/linux-command)
 
+* PHPer 必知必会的 Linux 命令 https://linux.hellocode.name
+  - https://github.com/Nick233333/gitbook
+
 
 ```
 ubantu:
