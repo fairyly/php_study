@@ -111,3 +111,8 @@ deb http://security.ubuntu.com/ubuntu xenial-security multiverse
   - 查看 nginx 版本：/usr/sbin/nginx -v
   - 查看 nginx 进程：ps -ef | grep nginx 命令ps查找nginx的主进程号，检查是否启动
   - 查看 80 端口：netstat -antlp | grep 80     nginx占用80端口，检查是否启动
+
+
+## 虚拟主机和主机粘贴复制文件
+
+vmvare 中设置中-->选项 共享文件夹   在Linux  mnt/hgfs/共享文件名下  可以看到文件
