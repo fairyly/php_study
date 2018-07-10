@@ -116,3 +116,5 @@ deb http://security.ubuntu.com/ubuntu xenial-security multiverse
 ## 虚拟主机和主机粘贴复制文件
 
 vmvare 中设置中-->选项 共享文件夹   在Linux  mnt/hgfs/共享文件名下  可以看到文件
+
+cp /mnt/hgfs/filedorname/filename /etc/apt
