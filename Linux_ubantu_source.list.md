@@ -157,6 +157,34 @@ deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted unive
 sudo apt-get update
 sudo apt-get upgrade
 ```
+=========================================
+
+## ubantu 配置安装 NGINX
+
+1、更新软件源
+
+sudo apt-get update
+
+2、安装nginx
+
+sudo apt-get install nginx
+
+3、配置nginx
+
+sudo vi /etc/nginx/nginx.conf
+
+修改完配置文件后需要进行reload重载
+
+4、nginx常用操作
+
+sudo service  nginx reload 不重启重新载入最新配置文件内容
+
+sudo service  nginx stop 停止服务
+
+sudo service  nginx restart 重启服务
+
+=========================================================
+
 另外其他几个国内源如下： 
 中科大源
 ```
